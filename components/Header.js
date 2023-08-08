@@ -1,30 +1,38 @@
 import Link from 'next/link';
 import { useShoppingCart } from '@/hooks/use-shopping-cart';
-import { formatCurrency } from '@/lib/utils';
 import { Logo } from '@/components/index';
-import { ShoppingCartIcon } from '@heroicons/react/solid';
+import CartMan from "@/components/CartMan";
 
 const Header = () => {
-  const { totalPrice, cartCount } = useShoppingCart();
+    const { totalPrice, cartCount } = useShoppingCart();
 
-  return (
-    <header className="sticky top-0 bg-white z-10 shadow">
-      <div className="container xl:max-w-screen-xl mx-auto p-6 flex justify-between">
-        <Logo />
-        <Link href="/cart">
-          <a className="flex items-center space-x-1 text-gray-700 hover:text-gray-900">
-            <div className="relative">
-              <ShoppingCartIcon className="w-7 h-7 flex-shrink-0" />
+    return (
+        <header className="header bg-sky py-3">
+            <div className="flex justify-center">
+                <Logo style={{ textAlign: 'center' }} />
             </div>
-            <p className="text-lg">
-              {formatCurrency(totalPrice)}{' '}
-              <span className="text-sm text-gray-500">({cartCount})</span>
-            </p>
-          </a>
-        </Link>
-      </div>
-    </header>
-  );
+            <ul className="flex justify-center  space-x-8">
+                <li>
+                    <div className="flex space-x-2">
+
+                        <Link href="/" className="flex sm:inline-block py-3 sm:py-0 text-3xl text-black hover:font-bold" style={{verticalAlign: 'baseline',}}>
+                            SHOP
+                        </Link>
+                        <Link href="/cart" className="flex-shrink-0 sm:hidden" style={{ width: '40px', height: '40px' }}>
+                            <CartMan/>
+                        </Link>
+                    </div>
+                </li>
+                <li>
+                    <Link href="/games" className="flex text-black py-3 sm:py-0 text-3xl hover:font-bold" >GAMES</Link>
+                </li>
+                <li>
+                    <Link href="/about" className="flex text-black py-3 sm:py-0 text-3xl hover:font-bold" >ABOUT</Link>
+                </li>
+            </ul>
+        </header>
+    );
 };
 
 export default Header;
+

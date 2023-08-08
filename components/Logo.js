@@ -1,15 +1,34 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 const Logo = () => (
-  <Link href="/">
-    <a className="flex items-center space-x-2">
-      <Image src="/leaf.svg" alt="Logo" width={32} height={32} />
-      <span className="hidden sm:inline-block font-extrabold text-3xl text-gray-700">
-        MyPlantShop
-      </span>
-    </a>
-  </Link>
+    (<Link href="/" className="flex items-center space-x-2">
+
+        <div className="logo-container">
+            <Image src="/sun.png" alt="Logo" width={75} height={75} className="spinning-sun" />
+        </div>
+
+        <span className="flex font-extrabold text-5xl sm:text-7xl md:text-8xl text-black hover:font-bold" style={{ verticalAlign: 'baseline', paddingTop: '5px',}}>
+            AREEB WORLD
+        </span>
+
+        <style jsx>{`
+          .logo-container {
+            animation: spin 10s linear infinite; /* Define the animation */
+          }
+
+          @keyframes spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        `}</style>
+
+    </Link>)
 );
 
 export default Logo;
+

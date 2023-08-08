@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         rose: colors.rose,
+        sky: '#CAF2FF',
       },
     },
   },

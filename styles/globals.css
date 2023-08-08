@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Areeeb';
+    src: url(../public/fonts/Areeeb.ttc);
+    /* Add other font properties if needed */
+}
+
+@layer base {
+    html {
+        font-family: Areeeb, system-ui, sans-serif;
+    }
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 9999; /* Use a value higher than the z-index of other elements */
+}

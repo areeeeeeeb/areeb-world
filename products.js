@@ -1,91 +1,94 @@
 const products = [
   {
-    id: 'price_1JAE9cEy9j6mAC9ettoD2R0D',
-    name: 'Kentiapalm (L)',
-    price: 3995,
+    id: 'silly-sailing',
+    name: 'Silly Sailing',
+    price: 1500,
     currency: 'USD',
-    image: '/plants/kentiapalm.png',
-    rating: {
-      count: 85,
-      rate: 4.5,
-    },
+    category: 'Printed!',
+    image: '/product-images/silly sailing/1.png',
+    images: [
+      '/product-images/silly sailing/1.png',
+    ],
+    shortDescription:
+        "Not so smoothly.",
+    longDescription:
+        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+    sizes: [
+      { size: '8"x10"', available: true },
+      { size: '11"x17"', available: false },
+    ],
   },
   {
-    id: 'price_1JAEABEy9j6mAC9eYTnD6Rv7',
-    name: 'Monstera Deliciosa (L)',
-    price: 5995,
+    id: 'price_1NcvaHLxpA6OXyxp44DiFHE2',
+    name: 'Sunday Satisfaction',
+    price: 1500,
     currency: 'USD',
-    image: '/plants/monstera-deliciosa.png',
-    rating: {
-      count: 137,
-      rate: 4.5,
-    },
+    category: 'Printed!',
+    image: '/product-images/sunday satisfaction/1.png',
+    images: [
+      '/product-images/sunday satisfaction/1.png',
+    ],
+    shortDescription:
+        "I am not afraid!",
+    longDescription:
+        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+    sizes: [
+      { size: '10"x10"', available: true },
+    ],
   },
   {
-    id: 'price_1JAEAjEy9j6mAC9e1jK4nxds',
-    name: 'Alocasia Zebrina',
-    price: 2995,
+    id: 'brunch-buds',
+    name: 'Brunch Buds',
+    price: 1500,
     currency: 'USD',
-    image: '/plants/alocasia-zebrina.png',
-    rating: {
-      count: 104,
-      rate: 4,
-    },
+    category: 'Printed!',
+    image: '/product-images/brunch buds/1.png',
+    images: [
+      '/product-images/brunch buds/1.png',
+    ],
+    shortDescription:
+        "What's better!?",
+    longDescription:
+        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+    sizes: [
+      { size: '10"x10"', available: true },
+    ],
   },
   {
-    id: 'price_1JAEBeEy9j6mAC9ewOgehqP6',
-    name: 'Cactus Euphorbia (L)',
-    price: 4995,
+    id: 'sandy-sand',
+    name: 'Sandy Sand',
+    price: 1500,
     currency: 'USD',
-    image: '/plants/euphorbia.png',
-    rating: {
-      count: 213,
-      rate: 5,
-    },
+    category: 'Printed!',
+    image: '/product-images/sandy sand/1.png',
+    images: [
+      '/product-images/sandy sand/1.png',
+    ],
+    shortDescription:
+        "Coarse!",
+    longDescription:
+        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+    sizes: [
+      { size: '10"x10"', available: true },
+    ],
   },
   {
-    id: 'price_1JAEBxEy9j6mAC9eJFypGxjc',
-    name: 'Calathea Orbifolia',
-    price: 2995,
+    id: 'blond-night',
+    name: 'Blond Night',
+    price: 1500,
     currency: 'USD',
-    image: '/plants/calathea-orbifolia.png',
-    rating: {
-      count: 78,
-      rate: 4,
-    },
-  },
-  {
-    id: 'price_1JAECJEy9j6mAC9epK9RoNwV',
-    name: 'Calathea Medallion',
-    price: 2995,
-    currency: 'USD',
-    image: '/plants/calathea-medallion.png',
-    rating: {
-      count: 89,
-      rate: 5,
-    },
-  },
-  {
-    id: 'price_1JAECWEy9j6mAC9eapjaRm9M',
-    name: 'Calathea Ornata',
-    price: 2995,
-    currency: 'USD',
-    image: '/plants/calathea-ornata.png',
-    rating: {
-      count: 271,
-      rate: 5,
-    },
-  },
-  {
-    id: 'price_1JAECpEy9j6mAC9etXk35nRL',
-    name: 'Zamioculcas (L)',
-    price: 3995,
-    currency: 'USD',
-    image: '/plants/zamioculcas.png',
-    rating: {
-      count: 78,
-      rate: 4,
-    },
+    category: 'Printed!',
+    image: '/product-images/blond night/square.png',
+    images: [
+      '/product-images/blond night/1.png',
+    ],
+    shortDescription:
+        "Ginger!",
+    longDescription:
+        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+    sizes: [
+      { size: '10"x10"', available: true },
+    ],
   },
 ];
 
