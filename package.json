@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.1",
+    "@react-hook/media-query": "^1.1.1",
     "@stripe/stripe-js": "^1.15.1",
     "axios": "^0.21.1",
     "canvas-confetti": "^1.4.0",

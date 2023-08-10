@@ -24,9 +24,9 @@ const ProductCard = ({ id, image, name, shortDescription, price, currency }) => 
                 />
             </div>
             <div className="mt-2">
-                <p className="font-semibold text-2xl uppercase" style={{ fontFamily: 'Areeeb'}}>{name}</p>
+                <p className="font-semibold text-xl sm:text-2xl uppercase leading-5">{name}</p>
                 <div className="flex items-center justify-between space-x-0">
-                    <p className="text-lg font-normal">
+                    <p className="text-md sm:text-lg font-normal leading-4">
                         {shortDescription}
                     </p>
                     <p className="text-lg font-semibold" style={{ verticalAlign: "middle"}}>

@@ -1,12 +1,20 @@
 import Link from 'next/link';
 import Image from "next/legacy/image";
 
+
 const Logo = () => (
     (<Link href="/" className="flex items-center space-x-2">
 
         <div className="logo-container">
-            <Image src="/sun.png" alt="Logo" width={75} height={75} className="spinning-sun" />
+            <Image
+                src="/sun.png"
+                alt="Logo"
+                width="100%"
+                height='100%'
+                className="spinning-sun"
+            />
         </div>
+
 
         <span className="flex font-extrabold text-5xl sm:text-7xl md:text-8xl text-black hover:font-bold" style={{ verticalAlign: 'baseline', paddingTop: '5px',}}>
             AREEB WORLD
