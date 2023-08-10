@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Image from "next/legacy/image";
 import errorImage from "/public/error.png"
-import Footer from "../components/footer";
-import Header from "../components/header";
 
 export default function Custom404() {
     return (
