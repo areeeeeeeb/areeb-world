@@ -8,8 +8,8 @@ const Header = () => {
 
     return (
         <header className="header bg-sky py-3">
-            <div className="flex justify-center">
-                <Logo style={{ textAlign: 'center' }} />
+            <div className="flex justify-center w-full">
+                <Logo/>
             </div>
             <ul className="flex justify-center  space-x-8">
                 <li>
