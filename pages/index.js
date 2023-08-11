@@ -16,7 +16,7 @@ export default function Home() {
     }, {});
 
     return (
-        <div className="container xl:max-w-screen-xl mx-auto py-0 px-6">
+        <div className="container xl:max-w-screen-xl xl:max-w-screen-xl mx-auto py-0 px-6 md:px-[5rem]">
             {Object.entries(productsByCategory).map(([category, categoryProducts], index) => (
                 <div key={category}>
                     <div className="container xl:max-w-screen-xl px-0 text-3xl md:text-5xl" style={{ paddingTop: '30px' }}>
