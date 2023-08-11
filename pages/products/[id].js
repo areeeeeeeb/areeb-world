@@ -66,7 +66,7 @@ const Product = props => {
 
 
         <div className="container lg:max-w-screen-lg mx-auto py-5 px-6">
-          <Link href="/cart" className="fixed right-16 bottom-20 w-1/4 md:w-1/6 invisible sm:visible" style={{ zIndex: '80' }}>
+          <Link href="/cart" className="fixed right-16 bottom-20 w-1/4 md:w-1/6 " style={{ zIndex: '80' }}>
             <CartMan adding={adding} />
           </Link>
 

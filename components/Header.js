@@ -2,9 +2,13 @@ import Link from 'next/link';
 import { useShoppingCart } from '@/hooks/use-shopping-cart';
 import { Logo } from '@/components/index';
 import CartMan from "@/components/CartMan";
+import { useRouter } from 'next/router';
 
 const Header = () => {
     const { totalPrice, cartCount } = useShoppingCart();
+    const router = useRouter();
+    const isHomePage = router.pathname === '/';
+
 
     return (
         <header className="header bg-sky py-3">
@@ -18,9 +22,11 @@ const Header = () => {
                         <Link href="/" className="flex sm:inline-block mt-3 sm:py-0 text-2xl md:text-3xl text-black hover:font-bold" style={{verticalAlign: 'baseline',}}>
                             SHOP
                         </Link>
-                        <Link href="/cart" className="flex-shrink-0 mb-2 sm:hidden" style={{ width: '40px', height: '40px' }}>
-                            <CartMan/>
-                        </Link>
+                        {isHomePage && (
+                            <Link href="/cart" className="flex-shrink-0 mb-2 sm:hidden" style={{ width: '40px', height: '40px' }}>
+                                <CartMan />
+                            </Link>
+                        )}
                     </div>
                 </li>
                 <li>
