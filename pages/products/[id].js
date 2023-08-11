@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { toast } from 'react-hot-toast';
 import { useShoppingCart } from '@/hooks/use-shopping-cart';
@@ -9,6 +10,7 @@ import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline';
 import products from 'products';
 import SizeSelector from "@/components/SizeSelector";
 import ImageViewer from "@/components/ImageViewer";
+import CartMan from "@/components/CartMan";
 
 
 const Product = props => {
@@ -24,13 +26,14 @@ const Product = props => {
 
   const handleOnAddToCart = () => {
     setAdding(true);
-    toastId.current = toast.loading(
-        `Adding ${qty} item${qty > 1 ? 's' : ''}...`
-    );
     addItem(props, qty);
   };
 
-
+  /*
+  toastId.current = toast.loading(
+      `Adding ${qty} item${qty > 1 ? 's' : ''}...`
+  );
+   */
 
   useEffect(() => {
     if (firstRun.current) {
@@ -39,9 +42,11 @@ const Product = props => {
     }
 
     setAdding(false);
+    /*
     toast.success(`${qty} ${props.name} added`, {
       id: toastId.current,
     });
+    */
     setQty(1);
   }, [cartCount]);
 
@@ -57,7 +62,14 @@ const Product = props => {
         <Head>
           <title>{props.name} from Areeb World!</title>
         </Head>
+
+
+
         <div className="container lg:max-w-screen-lg mx-auto py-5 px-6">
+          <Link href="/cart" className="fixed right-16 bottom-20 w-1/4 md:w-1/6 invisible sm:visible" style={{ zIndex: '80' }}>
+            <CartMan adding={adding} />
+          </Link>
+
           <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-12">
             {/* Product's image */}
             <ImageViewer images={props.images} />

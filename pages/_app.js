@@ -26,9 +26,6 @@ function MyApp({ Component, pageProps }) {
         <div className="min-h-screen flex flex-col bg-sky">
           <Header />
           <main className="flex-grow">
-              <Link href="/cart" className="fixed right-16 bottom-20 w-1/4 md:w-1/6 invisible sm:visible" style={{zIndex: '80'}}>
-                <CartMan />
-              </Link>
             <Component {...pageProps} />
           </main>
 
