@@ -10,17 +10,19 @@
   "dependencies": {
     "@heroicons/react": "^1.0.1",
     "@react-hook/media-query": "^1.1.1",
-    "@stripe/stripe-js": "^1.15.1",
+    "@stripe/stripe-js": "^1.54.2",
     "axios": "^0.21.1",
     "canvas-confetti": "^1.4.0",
     "framer-motion": "^10.15.0",
     "micro": "^9.3.4",
-    "next": "^13.4.12",
+    "next": "^13.4.13",
+    "next-auth": "^4.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.0.0",
-    "stripe": "^8.160.0",
-    "swr": "^2.2.0"
+    "stripe": "^8.222.0",
+    "swr": "^2.2.0",
+    "use-shopping-cart": "^3.1.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
