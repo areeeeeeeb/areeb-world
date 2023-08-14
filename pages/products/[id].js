@@ -14,11 +14,10 @@ import { cartState } from "/atoms/cartState"
   import SizeSelector from "@/components/SizeSelector";
   import ImageViewer from "@/components/ImageViewer";
   import CartMan from "@/components/CartMan";
+  import Cart from '/components/Cart';
 
 
-
-
-const Product = props => {
+  const Product = props => {
   const router = useRouter();
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
@@ -26,6 +25,10 @@ const Product = props => {
   const toastId = useRef();
   const firstRun = useRef(true);
   const [cartItem, setCartItem] = useRecoilState(cartState);
+
+
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
 
   const handleOnAddToCart = async () => {
     setAdding(true); // Set adding to true when adding to cart starts
@@ -46,6 +49,7 @@ const Product = props => {
     setTimeout(() => {
       setAdding(false);
     }, 500); // Adjust the time in milliseconds as needed
+    setIsCartOpen(true);
   };
 
   return router.isFallback ? (
@@ -64,9 +68,16 @@ const Product = props => {
 
 
         <div className="container lg:max-w-screen-lg mx-auto py-5 px-6">
-          <Link href="/cart" className="fixed right-16 bottom-20 w-1/4 md:w-1/6 " style={{ zIndex: '80' }}>
+          <div
+              className="fixed right-16 bottom-20 w-1/4 md:w-1/6 "
+              style={{ zIndex: '80' }}
+              // Toggle cart visibility on CartMan click
+              onClick={() => setIsCartOpen(!isCartOpen)}
+          >
             <CartMan adding={adding} />
-          </Link>
+          </div>
+
+          <Cart isOpen={isCartOpen} />
 
           <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-12">
             {/* Product's image */}
@@ -100,11 +111,11 @@ const Product = props => {
                       onClick={() => setQty(prev => prev - 1)}
                       disabled={qty <= 1}
                       className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current rounded-md p-1"
-                      style={{ fontFamily: 'Areeeb', verticalAlign: 'baseline'}}
+                      style={{verticalAlign: 'baseline'}}
                   >
                     <MinusSmIcon className="w-6 h-6 flex-shrink-0" />
                   </button>
-                  <p className="font-semibold text-3xl" style={{ fontFamily: 'Areeeb',verticalAlign: 'baseline' }}>{qty}</p>
+                  <p className="font-semibold text-3xl" style={{verticalAlign: 'baseline' }}>{qty}</p>
                   <button
                       onClick={() => setQty(prev => prev + 1)}
                       className=" rounded-md p-1"
