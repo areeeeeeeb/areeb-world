@@ -5,8 +5,6 @@ import Image from "next/legacy/image";
 import { formatCurrency } from '@/lib/utils';
 
 const ProductCard = ({ id, image, name, shortDescription, price, currency }) => {
-    // State variables
-    const [isHovered, setIsHovered] = useState(false);
 
     // Return the component
     return (
