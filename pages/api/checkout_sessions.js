@@ -11,6 +11,7 @@ export default async function handler(req, res) {
                 product_data: {
                     name: item.name,
                     images: [req.headers.origin+item.image],
+                    description: item.longDescription
                 },
                 unit_amount: item.price,
             },

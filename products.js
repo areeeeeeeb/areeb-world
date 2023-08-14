@@ -19,7 +19,7 @@ const products = [
     ],
   },
   {
-    id: 'price_1NcvaHLxpA6OXyxp44DiFHE2',
+    id: 'price_1NdzM6LxpA6OXyxp9lKkk0Ep',
     name: 'Sunday Satisfaction',
     price: 1500,
     currency: 'USD',
@@ -31,7 +31,7 @@ const products = [
     shortDescription:
         "I am not afraid!",
     longDescription:
-        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+        'No more Sunday Scaries!\nA 10x10 inch art print on heavyweight-museum quality paper signed by the artist.',
     sizes: [
       { size: '10"x10"', available: true },
     ],
