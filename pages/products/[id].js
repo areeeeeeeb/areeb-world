@@ -1,54 +1,52 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
+import React from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { toast } from 'react-hot-toast';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
-import Image from "next/legacy/image";
 import Head from 'next/head';
 import { formatCurrency } from '@/lib/utils';
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline';
 import products from 'products';
-import SizeSelector from "@/components/SizeSelector";
-import ImageViewer from "@/components/ImageViewer";
-import CartMan from "@/components/CartMan";
+import { useRecoilState } from 'recoil';
+import { cartState } from "/atoms/cartState"
+
+
+//Components
+  import SizeSelector from "@/components/SizeSelector";
+  import ImageViewer from "@/components/ImageViewer";
+  import CartMan from "@/components/CartMan";
+
+
 
 
 const Product = props => {
   const router = useRouter();
-  const { cartCount, addItem } = useShoppingCart();
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(props);
   const toastId = useRef();
   const firstRun = useRef(true);
+  const [cartItem, setCartItem] = useRecoilState(cartState);
 
+  const handleOnAddToCart = async () => {
+    setAdding(true); // Set adding to true when adding to cart starts
 
+    const product = { ...props, quantity: qty }; // Include quantity in the product object
 
-  const handleOnAddToCart = () => {
-    setAdding(true);
-    addItem(props, qty);
-  };
-
-  /*
-  toastId.current = toast.loading(
-      `Adding ${qty} item${qty > 1 ? 's' : ''}...`
-  );
-   */
-
-  useEffect(() => {
-    if (firstRun.current) {
-      firstRun.current = false;
-      return;
+    if (cartItem.findIndex(pro => pro.id === product.id) === -1) {
+      setCartItem(prevState => [...prevState, product]);
+    } else {
+      setCartItem(prevState => {
+        return prevState.map((item) => {
+          return item.id === product.id ? { ...item, quantity: item.quantity + qty } : item;
+        });
+      });
     }
 
-    setAdding(false);
-    /*
-    toast.success(`${qty} ${props.name} added`, {
-      id: toastId.current,
-    });
-    */
     setQty(1);
-  }, [cartCount]);
+    setTimeout(() => {
+      setAdding(false);
+    }, 500); // Adjust the time in milliseconds as needed
+  };
 
   return router.isFallback ? (
       <>
@@ -119,7 +117,6 @@ const Product = props => {
                 <button
                     type="button"
                     onClick={handleOnAddToCart}
-                    disabled={adding}
                     className="text-3xl border-2 rounded-xl py-0 px-6 bg-white hover:bg-rose-400 border-black focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-black uppercase transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     style={{ fontFamily: 'Areeeb', verticalAlign: 'baseline', paddingTop: '10px' }}
                 >

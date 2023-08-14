@@ -1,147 +1,57 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Head from 'next/head';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
-import {
-  XCircleIcon,
-  XIcon,
-  MinusSmIcon,
-  PlusSmIcon,
-} from '@heroicons/react/outline';
+import React from 'react'
+import axios from "axios"
+import { useRecoilState } from 'recoil'
+import { cartState } from '/atoms/cartState'
+import CartList from '/components/CartList'
 import { formatCurrency } from '@/lib/utils';
 
-import React from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-);
-
-
-
 const Cart = () => {
-    const { cartDetails, totalPrice, cartCount, addItem, removeItem, clearCart } =
-      useShoppingCart();
-    const [redirecting, setRedirecting] = useState(false);
 
+    const [cartItem, setCartItem] = useRecoilState(cartState)
 
-  return (
-      <>
-        <Head>
-          <title>My Shopping Cart | AlterClass</title>
-        </Head>
+    const totalPrice = () => {
+        let total = 0
+        cartItem.forEach(item => total += (item.price * item.quantity))
+        return total
+    }
 
-        <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
-          {cartCount > 0 ? (
-              /* Cart with Items */
-              <>
-                <h2 className="text-4xl font-semibold">Your shopping cart</h2>
-                <p className="mt-1 text-xl">
-                  {cartCount} items{' '}
-                  <button
-                      onClick={clearCart}
-                      className="opacity-50 hover:opacity-100 text-base capitalize"
-                  >
-                    (Clear all)
-                  </button>
-                </p>
-              </>
-          ) : (
-              /* Empty Cart */
-              <>
-                <h2 className="text-4xl font-semibold">
-                  Your shopping cart is empty.
-                </h2>
-              </>
-          )}
+    const createCheckoutSession = async () => {
 
-          {cartCount > 0 ? (
-              <div className="mt-12">
-                {Object.entries(cartDetails).map(([key, product]) => (
-                    <div
-                        key={key}
-                        className="flex justify-between space-x-4 hover:shadow-lg hover:border-opacity-50 border border-opacity-0 rounded-md p-4"
+        axios.post('api/checkout_sessions', { cartItem })
+            .then(res => {
+                console.log(res)
+                window.location = res.data.sessionURL
+            })
+            .catch(err => console.log(err))
+    }
+
+    return (
+        <div>
+
+            <div className='container'>
+                {cartItem.length <= 0
+                    //Empty Cart
+                        ? <h1 className='text-center text-4xl mt-32'>Your Cart Is Empty</h1>
+                    //Cart with Items
+                        : cartItem.map(item => <CartList key={item.id} data={item} />)}
+
+                {cartItem.length > 0 && (<div className='max-w-[800px] mx-auto mt-4 py-2 px-6 items-center'>
+                    <h2 className='text-right text-3xl font-bold'>Total: {formatCurrency(totalPrice())}</h2>
+                    <button
+                        className='border rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4'
+                        onClick={createCheckoutSession}
                     >
-                      {/* Image */}
-                      <Link
-                          href={`/products/${product.id}`}
-                          className="flex items-center space-x-4 group"
-                      >
-                        <div className="relative w-20 h-20 group-hover:scale-110 transition-transform">
-                          <Image
-                              src={product.image}
-                              alt={product.name}
-                              layout="fill"
-                              objectFit="contain"
-                          />
-                        </div>
-                        <p className="font-semibold text-3xl group-hover:underline ">
-                          {product.name}
-                        </p>
-                      </Link>
 
-                      {/* Price + Actions */}
-                      <div className="flex items-center">
-                        {/* Quantity */}
-                        <div className="flex items-center space-x-3">
-                          <button
-                              onClick={() => removeItem(product)}
-                              disabled={product?.quantity <= 1}
-                              className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current hover:bg-rose-100 hover:text-rose-500 rounded-md p-1"
-                          >
-                            <MinusSmIcon className="w-6 h-6 flex-shrink-0" />
-                          </button>
-                          <p className="font-semibold text-xl">{product.quantity}</p>
-                          <button
-                              onClick={() => addItem(product)}
-                              className="hover:bg-green-100 hover:text-green-500 rounded-md p-1"
-                          >
-                            <PlusSmIcon className="w-6 h-6 flex-shrink-0 " />
-                          </button>
-                        </div>
+                        Checkout
+                    </button>
+                </div>)}
 
-                        {/* Price */}
-                        <p className="font-semibold text-xl ml-16">
-                          <XIcon className="w-4 h-4 text-gray-500 inline-block" />
-                          {formatCurrency(product.price)}
-                        </p>
+            </div>
 
-                        {/* Remove item */}
-                        <button
-                            onClick={() => removeItem(product, product.quantity)}
-                            className="ml-4 hover:text-rose-500"
-                        >
-                          <XCircleIcon className="w-6 h-6 flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity" />
-                        </button>
-                      </div>
-                    </div>
-                ))}
 
-                <div className="flex flex-col items-end border-t py-4 mt-8">
-                  <p className="text-xl">
-                    Total:{' '}
-                    <span className="font-semibold">
-                  {formatCurrency(totalPrice)}
-                </span>
-                  </p>
 
-                  {/* Checkout button */}
-                    <form action="/api/checkout_sessions" method="POST">
-                        <input type="hidden" name="cartDetails" value={JSON.stringify(cartDetails)} />
-                        <button
-                            type="submit"
-                            role="link"
-                            className="border rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4"
-                        >
-                            Checkout
-                        </button>
-                    </form>
-                </div>
-              </div>
-          ) : null}
         </div>
-      </>
-  );
-};
+    )
+}
 
-export default Cart;
+export default Cart

@@ -10,6 +10,7 @@ const ProductCard = ({ id, image, name, shortDescription, price, currency }) => 
 
     // Return the component
     return (
+
         <Link href={`/products/${id}`} className="product-card p-2 bg-white group border-black border-2">
             <div
                 className={`relative w-full group cursor-pointer`}

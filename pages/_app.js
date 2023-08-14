@@ -1,12 +1,11 @@
+import React from 'react'
 import 'tailwindcss/tailwind.css';
 import '../styles/globals.css';
-import Link from 'next/link';
 import Head from 'next/head';
 import { CartProvider } from '@/hooks/use-shopping-cart';
+import { RecoilRoot } from "recoil"
 import { Header, Footer } from '@/components/index';
-import MovingCloud from '@/components/MovingCloud.js';
 import { Toaster } from 'react-hot-toast';
-import CartMan from "@/components/CartMan";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -21,17 +20,28 @@ function MyApp({ Component, pageProps }) {
         />
         <link rel="icon" href="/favicon.ico"  />
       </Head>
-      <CartProvider>
+        <RecoilRoot>
+        <CartProvider
+            mode="payment"
+            cartMode="client-only"
+            stripe={"pk_test_51NVoWxLxpA6OXyxpmLEjDZHYzhcIfVN1cSjckj2o1oUBwUIbEwsnuowZOGjAPi2npg9P9sBqu5mEH7D1Q8Nj3Qma00VGCMC9vy"}
+            successUrl="stripe.com"
+            cancelUrl="twitter.com/dayhaysoos"
+            currency="USD"
+            allowedCountries={['US', 'GB', 'CA']}
+            billingAddressCollection={true}
+        >
 
-        <div className="min-h-screen flex flex-col bg-sky">
-          <Header />
-          <main className="flex-grow">
-            <Component {...pageProps} />
-          </main>
+            <div className="min-h-screen flex flex-col bg-sky">
+              <Header />
+              <main className="flex-grow">
+                <Component {...pageProps} />
+              </main>
 
-            <Footer />
-        </div>
-      </CartProvider>
+                <Footer />
+            </div>
+        </CartProvider>
+        </RecoilRoot>
       <Toaster />
     </>
   );

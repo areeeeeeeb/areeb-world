@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react';
 import { ProductCard } from '@/components/index';
 import MovingCloud from '/components/MovingCloud.js';
