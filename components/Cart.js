@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import axios from 'axios';
 import { useRecoilState } from 'recoil';
 import { cartState } from '/atoms/cartState';
 import CartList from '/components/CartList';
 import { formatCurrency } from '@/lib/utils';
 
-    const Cart = ({ isOpen }) => {
+const Cart = ({ isOpen, onClose }) => {
     const [cartItem, setCartItem] = useRecoilState(cartState);
+    const cartRef = useRef(null);
+
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (cartRef.current && !cartRef.current.contains(event.target)) {
+                onClose();
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('mousedown', handleOutsideClick);
+        } else {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, [isOpen, onClose]);
 
     const handleDecreaseQty = (item) => {
         if (item.quantity > 1) {
@@ -47,10 +66,9 @@ import { formatCurrency } from '@/lib/utils';
 
     return (
         <>
-            {/* Backdrop element */}
             {isOpen && <div className="fixed inset-0 bg-black opacity-20 z-40"></div>}
-
             <div
+                ref={cartRef}
                 className={`fixed top-0 right-0 h-screen w-full md:w-3/4 lg:w-1/3 border-black bg-sky transition-transform duration-300 transform z-[50] ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
@@ -61,7 +79,13 @@ import { formatCurrency } from '@/lib/utils';
                     </div>
                     <div className='flex-grow overflow-y-auto'>
                         {cartItem.length <= 0 ? (
-                            <h1 className='text-center text-4xl mt-32'>Your Cart Is Empty</h1>
+                            <>
+                                <img
+                                    src="/cart/empty.png"
+                                    alt="cart"
+                                    className={`absolute bottom-36 ${isOpen ? 'translate-x-[-12.3%]' : 'left-0'}`}
+                                />
+                            </>
                         ) : (
                             cartItem.map((item) => (
                                 <CartList
@@ -77,7 +101,7 @@ import { formatCurrency } from '@/lib/utils';
                         <div className='p-4'>
                             <h2 className='text-right text-3xl font-bold'>Total: {formatCurrency(totalPrice())}</h2>
                             <button
-                                className='w-full bg-rose-400 text-white py-2 px-4 mt-4 rounded text-3xl'
+                                className='w-full bg-rose-400 text-white py-6 px-4 mt-4 mb-16 rounded-lg text-5xl'
                                 onClick={createCheckoutSession}
                             >
                                 Checkout!

@@ -29,6 +29,14 @@ import { cartState } from "/atoms/cartState"
 
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  const openCart = () => {
+    setIsCartOpen(true);
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
+
 
   const handleOnAddToCart = async () => {
     setAdding(true); // Set adding to true when adding to cart starts
@@ -68,16 +76,24 @@ import { cartState } from "/atoms/cartState"
 
 
         <div className="container lg:max-w-screen-lg mx-auto py-5 px-6">
+
           <div
-              className="fixed right-16 bottom-20 w-1/4 md:w-1/6 "
-              style={{ zIndex: '80' }}
+              className="fixed right-16 bottom-16 w-1/4 md:w-1/6"
+              style={{ zIndex: '40' }}
               // Toggle cart visibility on CartMan click
-              onClick={() => setIsCartOpen(!isCartOpen)}
+              onClick={(event) => {
+                event.stopPropagation();
+                if (isCartOpen) {
+                  closeCart();
+                } else {
+                  openCart();
+                }
+              }}
           >
             <CartMan adding={adding} />
           </div>
 
-          <Cart isOpen={isCartOpen} />
+          <Cart isOpen={isCartOpen} onClose={closeCart} />
 
           <div className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-12">
             {/* Product's image */}

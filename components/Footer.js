@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="self-stretch max-w-screen-lg flex-1 relative" style={{alignSelf: 'center', width: '100%'}}>
                 {/* Made with love in Canada */}
                 <b
-                    className="absolute text-2xl sm:text-3xl md:text-4xl bottom-10 sm:bottom-10 md:bottom-10 left-10 p-6 max-w-sm md:max-w-full flex-wrap"
+                    className="absolute text-3xl sm:text-3xl md:text-4xl bottom-14 sm:bottom-10 md:bottom-10 left-10 p-6 max-w-sm md:max-w-full flex-wrap"
                 >
                     Made with ❤️ in 🇨🇦 by Areeb
                 </b>
