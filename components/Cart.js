@@ -84,6 +84,7 @@ const Cart = ({ isOpen, onClose }) => {
                                     src="/cart/empty.png"
                                     alt="cart"
                                     className={`absolute bottom-36 ${isOpen ? 'translate-x-[-12.3%]' : 'left-0'}`}
+                                    onClick={onClose}
                                 />
                             </>
                         ) : (

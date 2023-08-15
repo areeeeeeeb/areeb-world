@@ -2,16 +2,27 @@ import Link from 'next/link';
 import { useShoppingCart } from '@/hooks/use-shopping-cart';
 import { Logo } from '@/components/index';
 import CartMan from "@/components/CartMan";
+import Cart from '/components/Cart';
 import { useRouter } from 'next/router';
+import {useState} from "react";
 
 const Header = () => {
     const { totalPrice, cartCount } = useShoppingCart();
     const router = useRouter();
     const isHomePage = router.pathname === '/';
 
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const openCart = () => {
+        setIsCartOpen(true);
+    };
+    const closeCart = () => {
+        setIsCartOpen(false);
+    };
+
 
     return (
         <header className="header bg-sky py-3">
+            <Cart isOpen={isCartOpen} onClose={closeCart} />
             <div className="flex justify-center w-full">
                 <Logo/>
             </div>
@@ -23,9 +34,20 @@ const Header = () => {
                             SHOP
                         </Link>
                         {isHomePage && (
-                            <Link href="/cart" className="flex-shrink-0 mb-2 sm:hidden" style={{ width: '40px', height: '40px' }}>
+                            <div
+                                className="flex-shrink-0 mb-2 sm:hidden"
+                                style={{ width: '40px', height: '40px' }}
+                                onClick={(event) => {
+                                    event.stopPropagation();
+                                    if (isCartOpen) {
+                                        closeCart();
+                                    } else {
+                                        openCart();
+                                    }
+                                }}
+                            >
                                 <CartMan />
-                            </Link>
+                            </div>
                         )}
                     </div>
                 </li>

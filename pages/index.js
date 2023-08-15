@@ -33,7 +33,7 @@ export default function Home() {
         <>
             <div
                 className="fixed right-16 bottom-16 w-1/4 md:w-1/6 invisible sm:visible"
-                style={{ zIndex: '40' }}
+                style={{ zIndex: '30' }}
                 // Toggle cart visibility on CartMan click
                 onClick={(event) => {
                     event.stopPropagation();

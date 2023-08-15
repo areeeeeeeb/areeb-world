@@ -10,7 +10,8 @@ const CartMan = ({ adding }) => {
         "/cart/2.png", //6
         "/cart/3.png", //7
         "/cart/4.png", //8
-        "/cart/incart.png" //9
+        "/cart/incart.png", //9
+        "/cart/smile.png", //10
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,6 +34,17 @@ const CartMan = ({ adding }) => {
         setCurrentIndex(newIndex);
     };
 
+    const handleImageHover = () => {
+        setCurrentIndex(9);
+    };
+
+    const handleImageLeave = () => {
+        const windowHeight = window.innerHeight;
+        const imageHeight = windowHeight / 8;
+        let newIndex = Math.floor(scrollY / imageHeight);
+        setCurrentIndex(newIndex);
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
@@ -48,7 +60,15 @@ const CartMan = ({ adding }) => {
         }
     }, [adding]);
 
-        return <img src={images[currentIndex]} alt="cart" className="cart flex"/>;
+        return(
+        <img
+            src={images[currentIndex]}
+            alt="cart"
+            className="cart flex"
+            onMouseEnter={handleImageHover}
+            onMouseLeave={handleImageLeave}
+        />
+        );
 };
 
 export default CartMan;
