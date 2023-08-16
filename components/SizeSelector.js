@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SizeSelector = ({ sizes }) => {
+const SizeSelector = ({ sizes, onSelectSize}) => {
     const [selectedSize, setSelectedSize] = useState(null);
 
     const handleButtonClick = (size) => {
@@ -19,6 +19,7 @@ const SizeSelector = ({ sizes }) => {
                     onClick={() => {
                         if (sizeObj.available) {
                             handleButtonClick(sizeObj.size);
+                            onSelectSize(sizeObj.size); // Call the onSelectSize callback
                         }
                     }}
                     disabled={!sizeObj.available}
@@ -26,7 +27,7 @@ const SizeSelector = ({ sizes }) => {
                     {sizeObj.size}
                     {!sizeObj.available && ( // Add this condition
                         <span
-                            className="absolute w-[3rem] h-11"
+                            className="absolute w-[3rem] h-11 "
                             style={{
                                 borderTop: '2px solid black', // Customize the diagonal line style
                                 transform: ' translateX(15px) translateY(10px) rotate(-45deg)',

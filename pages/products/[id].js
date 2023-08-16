@@ -25,6 +25,11 @@ import { cartState } from "/atoms/cartState"
   const toastId = useRef();
   const firstRun = useRef(true);
   const [cartItem, setCartItem] = useRecoilState(cartState);
+  const [selectedSize, setSelectedSize] = useState(null);
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
+  };
 
 
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -41,7 +46,7 @@ import { cartState } from "/atoms/cartState"
   const handleOnAddToCart = async () => {
     setAdding(true); // Set adding to true when adding to cart starts
 
-    const product = { ...props, quantity: qty }; // Include quantity in the product object
+    const product = { ...props, quantity: qty, size: selectedSize };
 
     if (cartItem.findIndex(pro => pro.id === product.id) === -1) {
       setCartItem(prevState => [...prevState, product]);
@@ -115,9 +120,8 @@ import { cartState } from "/atoms/cartState"
               </p>
 
               {/* SIZE STUFF */}
-              {props.sizes && (
-                  <SizeSelector sizes={props.sizes} />
-              )}
+
+              <SizeSelector sizes={props.sizes} onSelectSize={handleSizeSelect} selectedSize={selectedSize} />
 
               {/* Quantity and Add to Cart */}
               <div className="flex items-center space-x-4 py-3">
@@ -144,8 +148,9 @@ import { cartState } from "/atoms/cartState"
                 <button
                     type="button"
                     onClick={handleOnAddToCart}
-                    className="text-3xl border-2 rounded-xl py-0 px-6 bg-white hover:bg-rose-400 border-black focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-black uppercase transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="text-3xl border-2 rounded-xl py-0 px-6 bg-white enabled:hover:bg-rose-400 border-black focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-black uppercase transition-colors disabled:opacity-50 "
                     style={{ fontFamily: 'Areeeb', verticalAlign: 'baseline', paddingTop: '10px' }}
+                    disabled={!selectedSize}
                 >
                   Add to cart
                 </button>
