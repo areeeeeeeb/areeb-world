@@ -6,7 +6,7 @@ const CartList = ({ data, handleDecreaseQty, handleIncreaseQty }) => {
     const { name, image, price, quantity, size} = data;
 
     return (
-        <div className='mx-auto py-2 px-6 border-black border-b'>
+        <div className='mx-auto py-2 px-6 border-black'>
             <div className='flex items-center justify-between'>
                 <div className='h-[100px] w-[100px] border-black border'>
                     <img className='h-full w-full object-cover' src={image} alt='' />

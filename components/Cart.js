@@ -74,17 +74,29 @@ const Cart = ({ isOpen, onClose }) => {
                 }`}
             >
                 <div className='h-full flex flex-col'>
-                    <div className='p-2 py-4 mt-2 text-5xl border-black text-center uppercase'>
+                    <div className='p-2 py-4 mt-2 text-5xl border-black border-b-2 text-center uppercase'>
                         Your Cart
                     </div>
+
+                    <h2
+                        className={"absolute right-10 text-5xl py-5 text-right"}
+                        onClick={onClose}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        x
+                    </h2>
+
+
+
                     <div className='flex-grow overflow-y-auto'>
                         {cartItem.length <= 0 ? (
                             <>
                                 <img
                                     src="/cart/empty.png"
                                     alt="cart"
-                                    className={`absolute bottom-36 ${isOpen ? 'translate-x-[-12.3%]' : 'left-0'}`}
+                                    className={`absolute bottom-16 md:bottom-36 ${isOpen ? 'translate-x-[-12.3%]' : 'left-0'}`}
                                     onClick={onClose}
+                                    style={{ cursor: 'pointer' }}
                                 />
                             </>
                         ) : (
@@ -100,7 +112,12 @@ const Cart = ({ isOpen, onClose }) => {
                     </div>
                     {cartItem.length > 0 && (
                         <div className='p-4'>
-                            <h2 className='text-right text-3xl font-bold'>Total: {formatCurrency(totalPrice())}</h2>
+
+                            <div className="grid grid-cols-2 gap-4 place-content-between  ...">
+                                <h2 className='text-left text-3xl font-bold'>Total:</h2>
+                                <h2 className='text-right text-3xl font-bold'>{formatCurrency(totalPrice())}</h2>
+                            </div>
+
                             <button
                                 className='w-full bg-rose-400 text-white py-6 px-4 mt-4 mb-16 rounded-lg text-5xl'
                                 onClick={createCheckoutSession}
