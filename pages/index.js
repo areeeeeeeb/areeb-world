@@ -4,7 +4,6 @@ import { ProductCard } from '@/components/index';
 import MovingCloud from '/components/MovingCloud.js';
 import CartMan from '/components/CartMan.js';
 import products from 'products';
-import Link from 'next/link';
 import Cart from '/components/Cart';
 
 export default function Home() {

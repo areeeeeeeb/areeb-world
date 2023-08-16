@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link';
 import { useShoppingCart } from '@/hooks/use-shopping-cart';
 import { Logo } from '@/components/index';

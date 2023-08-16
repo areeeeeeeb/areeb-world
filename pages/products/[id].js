@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import React from 'react'
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { formatCurrency } from '@/lib/utils';
@@ -22,10 +21,10 @@ import { cartState } from "/atoms/cartState"
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(props);
-  const toastId = useRef();
   const firstRun = useRef(true);
   const [cartItem, setCartItem] = useRecoilState(cartState);
   const [selectedSize, setSelectedSize] = useState(null);
+
 
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
@@ -190,12 +189,6 @@ export async function getStaticProps({ params }) {
   }
 }
 
-const defaultProps = {
-  name: 'Default Product Name',
-  price: 0,
-  longDescription: 'Default Product Description',
-  sizes: [],
-  images: [],
-};
+
 
 export default Product;
