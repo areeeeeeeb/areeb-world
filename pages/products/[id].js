@@ -177,18 +177,28 @@ export async function getStaticProps({ params }) {
   try {
     const props = products?.find(product => product.id === params.id) ?? {};
 
+    // Set default values for props if they are not found in the data
+    const defaultProps = {
+      id: '',
+      name: 'Default Product Name',
+      price: 0,
+      longDescription: 'Default Product Description',
+      images: [],
+      sizes: [],
+      // Add more default props as needed
+    };
+
+    // Merge the default props with the fetched props
+    const mergedProps = { ...defaultProps, ...props };
+
     return {
-      props,
-      // Next.js will attempt to re-generate the page:
-      // - When a request comes in
-      // - At most once every second
-      revalidate: 1, // In seconds
+      props: mergedProps,
+      revalidate: 1,
     };
   } catch (error) {
     return { notFound: true };
   }
 }
-
 
 
 export default Product;
