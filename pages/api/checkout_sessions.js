@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
         const transformedItems = items.map((item) => ({
             price_data: {
-                currency: "usd",
+                currency: "cad",
                 product_data: {
                     name: item.name,
                     images: [req.headers.origin+item.image],
@@ -23,8 +23,33 @@ export default async function handler(req, res) {
             const session = await stripe.checkout.sessions.create({
                 line_items: transformedItems,
                 mode: 'payment',
+                shipping_options: [
+                    {
+                        shipping_rate_data: {
+                            type: 'fixed_amount',
+                            fixed_amount: {
+                                amount: 1000,
+                                currency: 'cad',
+                            },
+                            display_name: 'Ground Shipping',
+                            delivery_estimate: {
+                                minimum: {
+                                    unit: 'business_day',
+                                    value: 5,
+                                },
+                                maximum: {
+                                    unit: 'business_day',
+                                    value: 7,
+                                },
+                            },
+                        },
+                    },
+                ],
                 success_url: `${req.headers.origin}/success`,
                 cancel_url: `${req.headers.origin}/`,
+                shipping_address_collection: {
+                    allowed_countries: ['US', 'CA', 'GB', 'AU'], // List of allowed countries
+                },
             });
             res.json({"sessionURL": session.url});
         } catch (err) {
