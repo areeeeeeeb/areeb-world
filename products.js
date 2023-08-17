@@ -15,7 +15,7 @@ const products = [
         'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
     sizes: [
       { size: '8"x10"', available: true },
-      { size: '11"x17"', available: false },
+      { size: '11"x17"', available: true },
     ],
   },
   {
@@ -69,7 +69,8 @@ const products = [
     longDescription:
         'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
     sizes: [
-      { size: '10"x10"', available: true },
+      { size: '8"x10"', available: true },
+      { size: '11"x17"', available: true },
     ],
   },
   {
@@ -87,7 +88,8 @@ const products = [
     longDescription:
         'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
     sizes: [
-      { size: '10"x10"', available: true },
+      { size: '8"x10"', available: true },
+      { size: '11"x17"', available: true },
     ],
   },
 ];
