@@ -1,19 +1,9 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
-import { fetcher, shootFireworks } from '@/lib/utils';
 import { CheckIcon } from '@heroicons/react/outline';
 
 const Success = () => {
-    const {
-        query: { session_id },
-    } = useRouter();
-
-    useEffect(() => {
-        shootFireworks();
-    }, [data]);
 
     return (
         <div className="container xl:max-w-screen-xl mx-auto py-12 px-6 text-center">
