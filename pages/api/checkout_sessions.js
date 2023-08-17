@@ -9,9 +9,9 @@ export default async function handler(req, res) {
             price_data: {
                 currency: "cad",
                 product_data: {
-                    name: item.name,
+                    name: item.name + " (" + item.size + ")",
                     images: [req.headers.origin+item.image],
-                    description: item.longDescription + " " + item.size
+                    description: item.shortDescription
                 },
                 unit_amount: item.price,
             },

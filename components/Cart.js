@@ -119,10 +119,11 @@ const Cart = ({ isOpen, onClose }) => {
                             </div>
 
                             <button
-                                className='w-full bg-rose-400 text-white py-6 px-4 mt-4 mb-16 rounded-lg text-5xl'
+                                className='w-full bg-rose-400 text-white py-6 px-4 mt-4 mb-16 rounded-lg hover:text-bold text-5xl'
                                 onClick={createCheckoutSession}
+                                style={{ cursor: 'pointer' }}
                             >
-                                Checkout!
+                                CHECKOUT
                             </button>
                         </div>
                     )}
