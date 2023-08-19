@@ -29,7 +29,7 @@ const ProductCard = ({ id, image, name, shortDescription, price, currency }) => 
                         {shortDescription}
                     </p>
                     <p className="text-lg font-semibold" style={{ verticalAlign: "middle"}}>
-                        {formatCurrency(price, currency)}
+                        {formatCurrency(price)}
                     </p>
                 </div>
             </div>

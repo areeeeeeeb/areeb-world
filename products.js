@@ -1,9 +1,31 @@
 const products = [
   {
+    id: 'good-morning',
+    name: 'Good Morning',
+    price: 2500,
+    currency: 'CAD',
+    category: 'Clothes!',
+    image: '/product-images/good-morning/pi.png',
+    images: [
+      '/product-images/good-morning/pi.png',
+      '/product-images/good-morning/3.png',
+      '/product-images/good-morning/2.png',
+    ],
+    shortDescription:
+        "Rise and shine!",
+    longDescription:
+        'On this day I woke up semi-early and started daily-drawing as soon as I could.',
+    sizes: [
+      { size: 'S', available: true },
+      { size: 'M', available: true },
+      { size: 'L', available: true },
+    ],
+  },
+  {
     id: 'silly-sailing',
     name: 'Silly Sailing',
     price: 1500,
-    currency: 'USD',
+    currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/silly-sailing/1.png',
     images: [
@@ -22,7 +44,7 @@ const products = [
     id: 'price_1NdzM6LxpA6OXyxp9lKkk0Ep',
     name: 'Sunday Satisfaction',
     price: 1500,
-    currency: 'USD',
+    currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/sunday-satisfaction/small.png',
     images: [
@@ -40,7 +62,7 @@ const products = [
     id: 'brunch-buds',
     name: 'Brunch Buds',
     price: 1500,
-    currency: 'USD',
+    currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/brunch-buds/1.png',
     images: [
@@ -58,7 +80,7 @@ const products = [
     id: 'sandy-sand',
     name: 'Sandy Sand',
     price: 1500,
-    currency: 'USD',
+    currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/sandy-sand/1.png',
     images: [
@@ -77,7 +99,7 @@ const products = [
     id: 'blond-night',
     name: 'Blond Night',
     price: 1500,
-    currency: 'USD',
+    currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/blond-night/square.png',
     images: [
