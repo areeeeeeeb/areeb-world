@@ -27,7 +27,7 @@ const ImageViewer = ({ images }) => {
                 />
             </div>
 
-            <div className="w-11/12 border-2 border-black">
+            <div className="w-11/12 border-2 border-black bg-white">
                 <img
                     src={images[currentIndex]}
                     alt={`Image ${currentIndex + 1}`}

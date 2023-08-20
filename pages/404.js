@@ -25,7 +25,7 @@ export default function Custom404() {
                       content="A guy asking you where you are."/>
             </Head>
             <div className="flex w-full justify-center items-center">
-                <div className="w-1/2 max-w-md -mb-96 sm:-mb-96 md:-mb-36 -ml-24 sm:-ml-40">
+                <div className="w-3/4 sm:w-3/4 md:w-1/2  max-w-xl lg:w-3/4 mb-[-125%] sm:mb-[-60%] md:mb-[-40%] lg:mb-[-30%]">
                     <Image src={errorImage} width={1406} height={2036}/>
                 </div>
             </div>

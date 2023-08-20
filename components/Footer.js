@@ -6,7 +6,7 @@ const Footer = () => {
         <footer
             className="relative w-screen h-[350px] md:h-[300px] lg:h-[350px] flex flex-col items-center justify-center justify-items-center"
             style={{
-                paddingTop: "20px",
+                paddingTop: "0px",
                 backgroundImage: "url('/grass.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",

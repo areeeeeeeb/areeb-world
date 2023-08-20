@@ -10,11 +10,12 @@ const products = [
       '/product-images/good-morning/pi.png',
       '/product-images/good-morning/3.png',
       '/product-images/good-morning/2.png',
+      '/product-images/good-morning/4.png',
     ],
     shortDescription:
         "Rise and shine!",
     longDescription:
-        'On this day I woke up semi-early and started daily-drawing as soon as I could.',
+        "Rise and shine with this 100% Cotton Tee, meticulously block-printed and designed by Areeb in Moncton, New Brunswick, Canada. This shirt might just sprinkle a dash of extra charm into your morning! It's got good juju!",
     sizes: [
       { size: 'S', available: true },
       { size: 'M', available: true },
@@ -34,7 +35,7 @@ const products = [
     shortDescription:
         "Not so smoothly.",
     longDescription:
-        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+        "Day 346 of Areeb's Daily Draw. Sometimes the journey isn't very smooth, and that's okay! An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
       { size: '8"x10"', available: true },
       { size: '11"x17"', available: true },
@@ -53,7 +54,7 @@ const products = [
     shortDescription:
         "I am not afraid!",
     longDescription:
-        'No more Sunday Scaries!\nA 10x10 inch art print on heavyweight-museum quality paper signed by the artist.',
+        "Day 339 of Areeb's Daily Draw. No more Sunday Scaries! An art print on heavyweight-museum quality paper signed by Areeb. Edition of 30.",
     sizes: [
       { size: '10"x10"', available: true },
     ],
@@ -71,7 +72,7 @@ const products = [
     shortDescription:
         "What's better!?",
     longDescription:
-        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+        "Day 314 of Areeb's Daily Draw. I love brunch, and I love my friends even more! An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
       { size: '10"x10"', available: true },
     ],
@@ -89,7 +90,7 @@ const products = [
     shortDescription:
         "Coarse!",
     longDescription:
-        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+        "Day 227 of Areeb's Daily Draw. I don't like sand. It's coarse and rough and irritating and it gets everywhere. An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
       { size: '8"x10"', available: true },
       { size: '11"x17"', available: true },
@@ -108,7 +109,7 @@ const products = [
     shortDescription:
         "Ginger!",
     longDescription:
-        'Oh my goodness! This is so sick! I need it. You need it! Please buy it aa soon as possible! Give me all of your money. Please! Please! Please!',
+        "Day 317 of Areeb's Daily Draw. Let's go blond (ginger)! An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
       { size: '8"x10"', available: true },
       { size: '11"x17"', available: true },

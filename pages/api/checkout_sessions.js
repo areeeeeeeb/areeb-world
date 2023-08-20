@@ -28,7 +28,7 @@ export default async function handler(req, res) {
                         shipping_rate_data: {
                             type: 'fixed_amount',
                             fixed_amount: {
-                                amount: 1000,
+                                amount: 750,
                                 currency: 'cad',
                             },
                             display_name: 'Ground Shipping',
@@ -39,7 +39,27 @@ export default async function handler(req, res) {
                                 },
                                 maximum: {
                                     unit: 'business_day',
-                                    value: 7,
+                                    value: 12,
+                                },
+                            },
+                        },
+                    },
+                    {
+                        shipping_rate_data: {
+                            type: 'fixed_amount',
+                            fixed_amount: {
+                                amount: 0,
+                                currency: 'cad',
+                            },
+                            display_name: 'Local Delivery (Greater Moncton Area Only)',
+                            delivery_estimate: {
+                                minimum: {
+                                    unit: 'business_day',
+                                    value: 2,
+                                },
+                                maximum: {
+                                    unit: 'business_day',
+                                    value: 5,
                                 },
                             },
                         },
@@ -48,7 +68,7 @@ export default async function handler(req, res) {
                 success_url: `${req.headers.origin}/success`,
                 cancel_url: `${req.headers.origin}/`,
                 shipping_address_collection: {
-                    allowed_countries: ['US', 'CA', 'GB', 'AU'], // List of allowed countries
+                    allowed_countries: ['US', 'CA'], // List of allowed countries
                 },
             });
             res.json({"sessionURL": session.url});
