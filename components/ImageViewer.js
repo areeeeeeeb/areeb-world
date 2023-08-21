@@ -14,7 +14,7 @@ const ImageViewer = ({ images }) => {
     const showArrows = images.length > 1;
 
     return (
-        <div className="flex flex-row space-x-2 justify-center items-center w-5/6 lg:w-1/2">
+        <div className="flex flex-row space-x-2 justify-center items-center w-full sm:w-5/6 lg:w-1/2">
 
             <div
                 className={`w-10 h-10 cursor-pointer ${!showArrows ? 'invisible' : ''}`}

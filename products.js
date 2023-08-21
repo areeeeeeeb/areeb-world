@@ -15,7 +15,7 @@ const products = [
     shortDescription:
         "Rise and shine!",
     longDescription:
-        "Rise and shine with this 100% Cotton Tee, meticulously block-printed and designed by Areeb in Moncton, New Brunswick, Canada. This shirt might just sprinkle a dash of extra charm into your morning! It's got good juju!",
+        "Day 8 of Areeb's Daily Draw. Rise and shine with this 100% Cotton Tee, meticulously block-printed and designed by Areeb in Moncton, New Brunswick, Canada. Conquer the day!",
     sizes: [
       { size: 'S', available: true },
       { size: 'M', available: true },
@@ -109,7 +109,7 @@ const products = [
     shortDescription:
         "Ginger!",
     longDescription:
-        "Day 317 of Areeb's Daily Draw. Let's go blond (ginger)! An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
+        "Day 317 of Areeb's Daily Draw. Blond Night! Let's go blond (ginger). An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
       { size: '8"x10"', available: true },
       { size: '11"x17"', available: true },
