@@ -19,7 +19,8 @@ const products = [
     sizes: [
       { size: 'S', available: true },
       { size: 'M', available: true },
-      { size: 'L', available: true },
+      { size: 'L', available: false },
+      { size: 'XL', available: true },
     ],
   },
   {
