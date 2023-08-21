@@ -11,7 +11,7 @@ export default async function handler(req, res) {
                 product_data: {
                     name: item.name + " (" + item.size + ")",
                     images: [req.headers.origin+item.image],
-                    description: item.shortDescription
+                    description: item.shortDescription,
                 },
                 unit_amount: item.price,
             },
@@ -67,8 +67,12 @@ export default async function handler(req, res) {
                 ],
                 success_url: `${req.headers.origin}/success`,
                 cancel_url: `${req.headers.origin}/`,
+                allow_promotion_codes: true,
                 shipping_address_collection: {
                     allowed_countries: ['US', 'CA'], // List of allowed countries
+                },
+                "automatic_tax": {
+                    "enabled": true,
                 },
             });
             res.json({"sessionURL": session.url});
