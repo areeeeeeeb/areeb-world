@@ -23,6 +23,15 @@ export default async function handler(req, res) {
             const session = await stripe.checkout.sessions.create({
                 line_items: transformedItems,
                 mode: 'payment',
+                payment_method_types: ['card', 'acss_debit'],
+                payment_method_options: {
+                    acss_debit: {
+                        mandate_options: {
+                            payment_schedule: 'sporadic',
+                            transaction_type: 'personal',
+                        },
+                    },
+                },
                 shipping_options: [
                     {
                         shipping_rate_data: {
