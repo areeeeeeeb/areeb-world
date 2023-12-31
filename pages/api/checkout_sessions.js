@@ -37,10 +37,30 @@ export default async function handler(req, res) {
                         shipping_rate_data: {
                             type: 'fixed_amount',
                             fixed_amount: {
+                                amount: 1000,
+                                currency: 'cad',
+                            },
+                            display_name: 'International Shipping',
+                            delivery_estimate: {
+                                minimum: {
+                                    unit: 'business_day',
+                                    value: 5,
+                                },
+                                maximum: {
+                                    unit: 'business_day',
+                                    value: 12,
+                                },
+                            },
+                        },
+                    },
+                    {
+                        shipping_rate_data: {
+                            type: 'fixed_amount',
+                            fixed_amount: {
                                 amount: 500,
                                 currency: 'cad',
                             },
-                            display_name: 'Ground Shipping',
+                            display_name: 'Domestic Canadian Shipping',
                             delivery_estimate: {
                                 minimum: {
                                     unit: 'business_day',
@@ -60,7 +80,7 @@ export default async function handler(req, res) {
                                 amount: 0,
                                 currency: 'cad',
                             },
-                            display_name: 'Local Delivery (Greater Moncton Area Only)',
+                            display_name: 'Local Moncton Delivery',
                             delivery_estimate: {
                                 minimum: {
                                     unit: 'business_day',

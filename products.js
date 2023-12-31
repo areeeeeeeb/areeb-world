@@ -26,7 +26,7 @@ const products = [
   {
     id: 'silly-sailing',
     name: 'Silly Sailing',
-    price: 1500,
+    price: 1700,
     currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/silly-sailing/1.png',
@@ -45,7 +45,7 @@ const products = [
   {
     id: 'price_1NdzM6LxpA6OXyxp9lKkk0Ep',
     name: 'Sunday Satisfaction',
-    price: 1500,
+    price: 1700,
     currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/sunday-satisfaction/small.png',
@@ -63,7 +63,7 @@ const products = [
   {
     id: 'brunch-buds',
     name: 'Brunch Buds',
-    price: 1500,
+    price: 1700,
     currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/brunch-buds/1.png',
@@ -81,7 +81,7 @@ const products = [
   {
     id: 'sandy-sand',
     name: 'Sandy Sand',
-    price: 1500,
+    price: 1700,
     currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/sandy-sand/1.png',
@@ -100,7 +100,7 @@ const products = [
   {
     id: 'blond-night',
     name: 'Blond Night',
-    price: 1500,
+    price: 1700,
     currency: 'CAD',
     category: 'Printed!',
     image: '/product-images/blond-night/square.png',
