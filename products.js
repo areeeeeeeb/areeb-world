@@ -17,9 +17,9 @@ const products = [
     longDescription:
         "Day 8 of Areeb's Daily Draw. Rise and shine with this 100% Cotton Tee, meticulously block-printed and designed by Areeb in Moncton, New Brunswick, Canada. Conquer the day!",
     sizes: [
-      { size: 'S', available: false },
-      { size: 'M', available: false },
-      { size: 'L', available: false },
+      { size: 'S', available: true },
+      { size: 'M', available: true },
+      { size: 'L', available: true },
       { size: 'XL', available: false },
     ],
   },
@@ -38,8 +38,8 @@ const products = [
     longDescription:
         "Day 346 of Areeb's Daily Draw. Sometimes the journey isn't very smooth, and that's okay! An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
-      { size: '8"x10"', available: false },
-      { size: '11"x17"', available: false },
+      { size: '8"x10"', available: true },
+      { size: '11"x17"', available: true },
     ],
   },
   {
@@ -57,7 +57,7 @@ const products = [
     longDescription:
         "Day 339 of Areeb's Daily Draw. No more Sunday Scaries! An art print on heavyweight-museum quality paper signed by Areeb. Edition of 30.",
     sizes: [
-      { size: '10"x10"', available: false },
+      { size: '10"x10"', available: true },
     ],
   },
   {
@@ -75,7 +75,7 @@ const products = [
     longDescription:
         "Day 314 of Areeb's Daily Draw. I love brunch, and I love my friends even more! An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
-      { size: '10"x10"', available: false },
+      { size: '10"x10"', available: true },
     ],
   },
   {
@@ -93,8 +93,8 @@ const products = [
     longDescription:
         "Day 227 of Areeb's Daily Draw. I don't like sand. It's coarse and rough and irritating and it gets everywhere. An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
-      { size: '8"x10"', available: false },
-      { size: '11"x17"', available: false },
+      { size: '8"x10"', available: true },
+      { size: '11"x17"', available: true },
     ],
   },
   {
@@ -112,8 +112,8 @@ const products = [
     longDescription:
         "Day 317 of Areeb's Daily Draw. Blond Night! Let's go blond (ginger). An art print on heavyweight museum-quality paper, signed and numbered by Areeb. Edition of 30.",
     sizes: [
-      { size: '8"x10"', available: false },
-      { size: '11"x17"', available: false },
+      { size: '8"x10"', available: true },
+      { size: '11"x17"', available: true },
     ],
   },
 ];
