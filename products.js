@@ -17,9 +17,9 @@ const products = [
     longDescription:
         "Day 8 of Areeb's Daily Draw. Rise and shine with this 100% Cotton Tee, meticulously block-printed and designed by Areeb in Moncton, New Brunswick, Canada. Conquer the day!",
     sizes: [
-      { size: 'S', available: true },
-      { size: 'M', available: true },
-      { size: 'L', available: true },
+      { size: 'S', available: false },
+      { size: 'M', available: false },
+      { size: 'L', available: false },
       { size: 'XL', available: false },
     ],
   },
