@@ -22,10 +22,10 @@ export default function Home() {
 
             <div
                 className="absolute flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-1/3 z-50
-                           bottom-[150px] right-[30px]
-                           sm:bottom-[120px] sm:right-[70px]
-                           md:bottom-[120px] sm:right-[70px]
-                           lg:bottom-[120px] lg:right-[300px]">
+                           bottom-[20%] right-[30px]
+                           sm:bottom-[12%] sm:right-[70px]
+                           sm:right-[70px]
+                           lg:right-[300px]">
                 <CustomButton buttonText="SHOP" link="/shop"/>
                 <CustomButton buttonText="WORK" link="/work"/>
                 <CustomButton buttonText="DESIGN" link="/design"/>
@@ -38,13 +38,13 @@ export default function Home() {
                 <Cloud2 size={300} speed={100} />
 
             </div>
-            <div className="absolute max-w-2xl w-3/4
-                            bottom-[240px] sm:bottom-[240px] md:bottom-[100px] lg:bottom-[4%] xl:bottom-[25px]
+            <div className="absolute max-w-2xl w-3/4 max-h-[110%]
+                            bottom-[240px] sm:bottom-[24%] md:bottom-[10%] lg:bottom-[4%] xl:bottom-[25px]
                             left-[-60px] sm:left-[-120px]  lg:left-[-140px] xl:left-[4%] 2xl:left-[5%]">
                 <KeyboardMan/>
             </div>
             <div className="absolute w-8/12 sm:max-w-[550px] md:max-w-[650px] lg:max-w-[700px]
-                            bottom-[400px] md:bottom-[320px] lg:bottom-[250px]
+                            bottom-[360px] sm:bottom-[44%]  md:bottom-[40%] lg:bottom-[250px]
                             right-[-30px] sm:right-[60px] md:right-[-10px] lg:right-[90px] xl:right-[110px] 2xl:right-[350px]
                             z-10">
                 <Computer />
@@ -59,7 +59,7 @@ export default function Home() {
             >
 
                     <div
-                        className="absolute bottom-0 sm:bottom-10 right-0 flex gap-[19px] p-4"
+                        className="absolute bottom-0 right-0 flex gap-[19px] p-4"
                     >
                         {/* Email */}
                         <a href="mailto:arasul@uwaterloo.cas">
