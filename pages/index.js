@@ -39,11 +39,11 @@ export default function Home() {
 
             </div>
             <div className="absolute max-w-2xl w-3/4
-                            bottom-[240px] sm:bottom-[240px] md:bottom-[100px] lg:bottom-[100px] xl:bottom-[25px]
+                            bottom-[240px] sm:bottom-[240px] md:bottom-[100px] lg:bottom-[4%] xl:bottom-[25px]
                             left-[-60px] sm:left-[-120px]  lg:left-[-140px] xl:left-[4%] 2xl:left-[5%]">
                 <KeyboardMan/>
             </div>
-            <div className="absolute w-8/12 sm:max-w-[550px] md:max-w-[650px] lg:max-w-[730px] max-h-[75%]
+            <div className="absolute w-8/12 sm:max-w-[550px] md:max-w-[650px] lg:max-w-[700px]
                             bottom-[400px] md:bottom-[320px] lg:bottom-[250px]
                             right-[-30px] sm:right-[60px] md:right-[-10px] lg:right-[90px] xl:right-[110px] 2xl:right-[350px]
                             z-10">
