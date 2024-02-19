@@ -7,6 +7,11 @@ module.exports = {
         destination: '/Selected Works By Areeb Rasul.pdf',
         permanent: false
       },
+      {
+        source: '/work',
+        destination: '/Areeb Rasul Resume.pdf',
+        permanent: false
+      },
     ]
   },
 }

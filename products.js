@@ -189,25 +189,6 @@ const products = [
       { size: '8"x10"', available: true },
     ],
   },
-  {
-    id: 'unlisted',
-    name: 'Unlisted Daily Draw',
-    price: 2000,
-    currency: 'CAD',
-    category: 'Printed!',
-    image: '/product-images/other/1.jpg',
-    images: [
-      '/product-images/other/1.jpg',
-    ],
-    shortDescription:
-        "There's more to choose from!",
-    longDescription:
-        "Can't find the daily draw you're looking for? That's understandable! There are a few of them! To purchase a print of an unlisted daily draw, browse at www.areebsdailydraw.com/calendar, send the date of the draw to rasulareeb@gmail.com with the subject line \"UNLISTED DAILY DRAW,\" along with any notes for me about desired format. Afterward, complete your purchase here! You'll receive an art print on heavyweight museum-quality paper, signed and numbered by Areeb.",
-    sizes: [
-      { size: '10"x10"', available: true },
-      { size: '8"x10"', available: true },
-    ],
-  },
 ];
 
 export default products;

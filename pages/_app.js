@@ -6,8 +6,10 @@ import { CartProvider } from '@/hooks/use-shopping-cart';
 import { RecoilRoot } from "recoil"
 import { Header, Footer } from '@/components/index';
 import { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
+    const router = useRouter();
   return (
     <>
       <Head>
@@ -33,12 +35,11 @@ function MyApp({ Component, pageProps }) {
         >
 
             <div className="min-h-screen flex flex-col bg-sky">
-              <Header />
+                {router.pathname !== '/' && <Header />}
               <main className="flex-grow">
                 <Component {...pageProps} />
               </main>
-
-                <Footer />
+                {router.pathname !== '/' && <Footer />}
             </div>
         </CartProvider>
         </RecoilRoot>

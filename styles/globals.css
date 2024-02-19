@@ -20,3 +20,20 @@
     top: 0;
     z-index: 40; /* Use a value higher than the z-index of other elements */
 }
+
+.textarea-terminal {
+    color: #fff; /* White text */
+    font-family: Areeeb, system-ui, sans-serif;
+    caret-color: white; /* White caret to mimic the cursor */
+    border: none; /* Remove border */
+}
+
+/* Optional: add blinking animation to simulate the blinking cursor */
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: white; }
+}
+
+.textarea-terminal:focus {
+    animation: blink 1s step-end infinite;
+}

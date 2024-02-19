@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Footer = () => {
 
     return (
@@ -24,19 +23,8 @@ const Footer = () => {
                 <div
                     className="absolute bottom-0 sm:bottom-10  right-10 flex gap-[19px] p-6"
                 >
-                    {/* Twitter */}
-                    <a href="https://twitter.com/areebrasul" target="_blank" rel="noopener noreferrer">
-                        <img
-                            src="/social-medias/tweet.png"
-                            alt="tweet"
-                            width={40}
-                            height={40}
-                            className="tweet"
-                            style={{flexShrink: 0}}
-                        />
-                    </a>
                     {/* Instagram */}
-                    <a href="https://www.instagram.com/areeeeeeeeeeeeeeeeb/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/aaaaaareeb/" target="_blank" rel="noopener noreferrer">
                         <img
                             src="/social-medias/insta.png"
                             alt="insta"
@@ -47,7 +35,7 @@ const Footer = () => {
                         />
                     </a>
                     {/* TikTok */}
-                    <a href="https://www.tiktok.com/@areeeeeeeeeeeeeb" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.tiktok.com/@areebsdailydraw" target="_blank" rel="noopener noreferrer">
                         <img
                             src="/social-medias/tok.png"
                             alt="TikTok"
