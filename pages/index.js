@@ -44,7 +44,7 @@ export default function Home() {
                 <KeyboardMan/>
             </div>
             <div className="absolute w-8/12 sm:max-w-[550px] md:max-w-[650px] lg:max-w-[700px]
-                            bottom-[360px] sm:bottom-[44%]  md:bottom-[40%] lg:bottom-[250px]
+                            bottom-[360px] sm:bottom-[44%]  md:bottom-[40%] lg:bottom-[25%]
                             right-[-30px] sm:right-[60px] md:right-[-10px] lg:right-[90px] xl:right-[110px] 2xl:right-[350px]
                             z-10">
                 <Computer />
