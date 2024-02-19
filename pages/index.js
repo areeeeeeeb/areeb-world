@@ -3,12 +3,11 @@ import Image from "next/legacy/image";
 import React from 'react'
 import { useState, useEffect } from 'react';
 import KeyboardMan from '../components/KeyboardMan';
-import MovingCloud from '../components/MovingCloud';
+import Cloud2 from '../components/Cloud2';
 import ComputerImage from "/public/keyboard-man/computer.png"
 import Footer from '../components/Footer';
 import { Logo } from '@/components/index';
 import CustomButton from '../components/CustomButton'
-
 import Computer from '../components/Computer'
 
 export default function Home() {
@@ -33,18 +32,20 @@ export default function Home() {
             </div>
 
 
-            <div className="relative translate-y-[400px]">
-                <MovingCloud />
+            <div className="relative translate-y-[300px]">
+                <Cloud2 size={100} speed={300} />
+                <Cloud2 size={200} speed={200} />
+                <Cloud2 size={300} speed={100} />
+
             </div>
             <div className="absolute max-w-2xl w-3/4
                             bottom-[240px] sm:bottom-[240px] md:bottom-[100px] lg:bottom-[100px] xl:bottom-[25px]
-                            left-[-60px] sm:left-[-120px]  lg:left-[-140px] xl:left-[30px]">
+                            left-[-60px] sm:left-[-120px]  lg:left-[-140px] xl:left-[4%] 2xl:left-[5%]">
                 <KeyboardMan/>
             </div>
-            <div className="absolute w-8/12 md:max-w-[650px] lg:max-w-[730px]
+            <div className="absolute w-8/12 sm:max-w-[550px] md:max-w-[650px] lg:max-w-[730px] max-h-[75%]
                             bottom-[400px] md:bottom-[320px] lg:bottom-[250px]
                             right-[-30px] sm:right-[60px] md:right-[-10px] lg:right-[90px] xl:right-[110px] 2xl:right-[350px]
-                            md:bottom-[120px]
                             z-10">
                 <Computer />
             </div>

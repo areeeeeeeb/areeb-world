@@ -11,9 +11,9 @@ const KeyboardMan = () => {
     const [handPosition, setHandPosition] = useState({ x: 40, y: -20 });
 
     // Constraints for the hand movement
-    const minX = -50; // minimum x position
-    const maxX = 70;  // maximum x position
-    const minY = -50; // minimum y position
+    const minX = -48; // minimum x position
+    const maxX = 100;  // maximum x position
+    const minY = -70; // minimum y position
     const maxY = 50;  // maximum y position
 
     // Ref for the div whose height affects hand movement speed
