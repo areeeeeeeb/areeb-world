@@ -12,7 +12,7 @@ const KeyboardMan = () => {
 
     // Constraints for the hand movement
     const minX = -48; // minimum x position
-    const maxX = 100;  // maximum x position
+    const maxX = 65;  // maximum x position
     const minY = -70; // minimum y position
     const maxY = 50;  // maximum y position
 
