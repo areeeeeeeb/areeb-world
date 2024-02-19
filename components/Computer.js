@@ -58,32 +58,32 @@ const Computer = () => {
     }, [inputValue]);
 
     useEffect(() => {
-        // Function to focus the input element
+        // Check if the device is not a mobile device using window.matchMedia()
+        const isNotMobile = window.matchMedia('(min-width: 768px)').matches;
+
         const focusInput = () => {
             if (inputRef.current && document.activeElement !== inputRef.current) {
                 inputRef.current.focus();
             }
         };
 
-        // Add event listeners for focusing input
-        document.addEventListener('click', focusInput);
-        document.addEventListener('focusin', focusInput);
+        // If not on a mobile device, always focus the input
+        // On mobile devices, this will not automatically focus, allowing for tap-to-focus behavior
+        if (isNotMobile) {
+            document.addEventListener('click', focusInput);
+            document.addEventListener('focusin', focusInput);
 
-        // Cleanup event listeners on component unmount
-        return () => {
-            document.removeEventListener('click', focusInput);
-            document.removeEventListener('focusin', focusInput);
-        };
+            // Cleanup event listeners on component unmount
+            return () => {
+                document.removeEventListener('click', focusInput);
+                document.removeEventListener('focusin', focusInput);
+            };
+        }
     }, []);
+
 
     return (
         <div className="relative">
-            {/* Background image */}
-            <img
-                src="/keyboard-man/computer-no-screen.png"
-                alt="compumuter"
-                className="absolute w-full h-auto z-40"
-            />
             <img
                 src="/keyboard-man/computer.png"
                 alt="computer"
@@ -96,7 +96,6 @@ const Computer = () => {
                 value={inputValue}
                 onChange={handleInputChange}
                 className="textarea-terminal absolute top-1/2 left-1/2 transform translate-x-[-68%] translate-y-[-87%] w-7/12 h-[41%] p-2 focus:outline-none bg-transparent overflow-hidden"
-                autoFocus
             ></textarea>
         </div>
     );
