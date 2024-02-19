@@ -44,8 +44,8 @@ const KeyboardMan = () => {
             if (event.touches.length > 0) {
                 const touch = event.touches[0];
                 // Calculate movement based on the difference from the last touch position
-                const moveX = Math.max(minX, Math.min(maxX, handPosition.x + (touch.screenY - lastTouch.current.y) * 0.3));
-                const moveY = Math.max(minY, Math.min(maxY, handPosition.y - (touch.screenX - lastTouch.current.x) * 0.2));
+                const moveX = Math.max(minX, Math.min(maxX-20, handPosition.x + (touch.screenY - lastTouch.current.y) * 0.2));
+                const moveY = Math.max(minY+20, Math.min(maxY-20, handPosition.y - (touch.screenX - lastTouch.current.x) * 0.2));
                 setHandPosition({ x: moveX, y: moveY });
                 lastTouch.current = { x: touch.screenX, y: touch.screenY };
             }
