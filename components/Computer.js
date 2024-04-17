@@ -87,7 +87,8 @@ const Computer = () => {
             <img
                 src="/keyboard-man/computer.png"
                 alt="computer"
-                className="w-full h-auto"
+                class="w-full h-auto"
+                draggable="false"
             />
 
             {/* Text input overlay */}
