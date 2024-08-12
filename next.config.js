@@ -4,7 +4,7 @@ module.exports = {
     return [
       {
         source: '/design',
-        destination: '/Selected Works By Areeb Rasul.pdf',
+        destination: '/Selected-Works-By-Areeb-Rasul.pdf',
         permanent: false
       },
       {
