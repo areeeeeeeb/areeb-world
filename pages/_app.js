@@ -21,6 +21,8 @@ function MyApp({ Component, pageProps }) {
           content="Areeb World!"
         />
         <link rel="icon" href="/favicon.ico"  />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
       </Head>
         <RecoilRoot>
         <CartProvider

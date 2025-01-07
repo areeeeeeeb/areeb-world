@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ImageViewer = ({ images }) => {
+const ImageViewer = ({ images = ["/error.png"] }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const prevImage = () => {
@@ -20,10 +20,11 @@ const ImageViewer = ({ images }) => {
                 className={`w-10 h-10 cursor-pointer ${!showArrows ? 'invisible' : ''}`}
                 onClick={prevImage}
             >
-                <img src="/left.png"
-                     alt="Previous"
-                     layout="fill"
-                     objectFit="contain"
+                <img
+                    src="/left.png"
+                    alt="Previous"
+                    layout="fill"
+                    className="object-contain"
                 />
             </div>
 
@@ -45,9 +46,4 @@ const ImageViewer = ({ images }) => {
     );
 };
 
-ImageViewer.defaultProps = {
-    images: ["/product-images/silly sailing/1.png"], // Provide an array of image URLs here
-};
-
 export default ImageViewer;
-
