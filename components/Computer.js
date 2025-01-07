@@ -31,6 +31,10 @@ const Computer = () => {
             router.push('/design'); // Navigate to /design
         }
 
+        if (newValue.endsWith('ls\n')) {
+            newValue += 'shop\nwork\ndesign\n';
+        }
+
         if (newValue.endsWith('\n')) {
             newValue += '@areeb-world ~ % ';
         }
@@ -87,7 +91,7 @@ const Computer = () => {
             <img
                 src="/keyboard-man/computer.png"
                 alt="computer"
-                class="w-full h-auto"
+                className="w-full h-auto"
                 draggable="false"
             />
 
@@ -96,7 +100,19 @@ const Computer = () => {
                 ref={inputRef}
                 value={inputValue}
                 onChange={handleInputChange}
-                className="textarea-terminal absolute top-1/2 left-1/2 transform translate-x-[-68%] translate-y-[-87%] w-7/12 h-[41%] p-2 focus:outline-none bg-transparent overflow-hidden"
+                onKeyDown={(event) => {
+                    const disabledKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+                    if (disabledKeys.includes(event.key)) {
+                        event.preventDefault();
+                    }
+                    if (event.key === 'Backspace') {
+                        if (inputValue.endsWith('% ')) {
+                            event.preventDefault();
+                        }
+                    }
+                }}
+                spellCheck="false"
+                className="textarea-terminal absolute top-1/2 resize-none left-1/2 transform translate-x-[-68%] translate-y-[-87%] w-7/12 h-[41%] p-2 focus:outline-none bg-transparent overflow-hidden"
             ></textarea>
         </div>
     );
