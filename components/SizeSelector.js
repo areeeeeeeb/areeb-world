@@ -42,10 +42,6 @@ const SizeSelector = ({ sizes, onSelectSize}) => {
     );
 };
 
-SizeSelector.defaultProps = {
-    selectedSize: null,
-};
-
 export default SizeSelector;
 
 

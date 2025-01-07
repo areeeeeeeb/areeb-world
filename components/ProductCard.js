@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from "next/legacy/image";
 import { formatCurrency } from '@/lib/utils';
 
-const ProductCard = ({ id, image, name, shortDescription, price, currency }) => {
+const ProductCard = ({ id = '', image = '', name = 'Product not foun', shortDescription = '', price = 0, currency = 'CAD' }) => {
 
     // Return the component
     return (
@@ -36,16 +36,6 @@ const ProductCard = ({ id, image, name, shortDescription, price, currency }) => 
 
         </Link>
     );
-};
-
-// Default props for ProductCard component
-ProductCard.defaultProps = {
-    id: '', // Default product id
-    image: '', // Default image URL
-    name: 'Default Product', // Default product name
-    shortDescription: 'No description available', // Default short description
-    price: 0, // Default price
-    currency: 'USD', // Default currency
 };
 
 export default ProductCard;
