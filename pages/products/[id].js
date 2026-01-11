@@ -74,7 +74,7 @@ import { cartState } from "/atoms/cartState"
   ) : (
       <>
         <Head>
-          <title>{props.name} from Areeb World!</title>
+          <title>{`${props.name} from Areeb World!`}</title>
         </Head>
 
 
