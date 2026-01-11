@@ -31,10 +31,13 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.16",
     "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^25.0.6",
+    "@types/react": "^19.2.8",
     "autoprefixer": "^10.2.6",
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.33.1",
     "postcss": "^8.3.5",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
   }
 }
