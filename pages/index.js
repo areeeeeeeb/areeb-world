@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 import React from 'react'
 import { useState, useEffect } from 'react';
 import KeyboardMan from '../components/KeyboardMan';
-import Cloud2 from '../components/Cloud2';
+import MovingCloud from "@/components/MovingCloud";
 import ComputerImage from "/public/keyboard-man/computer.png"
 import Footer from '../components/Footer';
 import { Logo } from '@/components/index';
@@ -34,9 +34,9 @@ export default function Home() {
 
 
                 <div className="relative translate-y-[300px]">
-                    <Cloud2 size={100} speed={300} />
-                    <Cloud2 size={200} speed={200} />
-                    <Cloud2 size={300} speed={100} />
+                    <MovingCloud size={100} speed={300} />
+                    <MovingCloud size={200} speed={200} />
+                    <MovingCloud size={300} speed={100} />
 
                 </div>
                 <div className="absolute max-w-2xl w-3/4 max-h-[110%]
