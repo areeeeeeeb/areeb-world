@@ -1,11 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@font-face {
+@theme {
+  --color-sky: #CAF2FF;
+}
+
+@layer utilities {
+  @font-face {
     font-family: 'Areeeb';
     src: url(../public/fonts/Areeeb.ttc);
     /* Add other font properties if needed */
+  }
 }
 
 @layer base {

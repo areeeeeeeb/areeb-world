@@ -11,18 +11,18 @@ const CartList = ({ data, handleDecreaseQty, handleIncreaseQty }) => {
                 <div className='h-[100px] w-[100px] border-black border'>
                     <img className='h-full w-full object-cover' src={image} alt='' />
                 </div>
-                <div className='flex-grow ml-4'>
+                <div className='grow ml-4'>
                     <div className='font-bold text-2xl uppercase'>{name}</div>
                     <div className='text-xl -mt-2'>{size}</div>
                     <div className='flex items-center space-x-0'>
                         <button onClick={handleDecreaseQty} style={{ verticalAlign: 'baseline' }}>
-                            <MinusSmIcon className='w-6 h-6 flex-shrink-0' />
+                            <MinusSmIcon className='w-6 h-6 shrink-0' />
                         </button>
                         <p className='text-2xl mt-1' style={{ verticalAlign: 'baseline' }}>
                             {quantity}
                         </p>
                         <button onClick={handleIncreaseQty} className='rounded-md p-1'>
-                            <PlusSmIcon className='w-6 h-6 flex-shrink-0' />
+                            <PlusSmIcon className='w-6 h-6 shrink-0' />
                         </button>
                     </div>
                 </div>

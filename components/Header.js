@@ -1,6 +1,4 @@
-import React from 'react'
 import Link from 'next/link';
-import { useShoppingCart } from '@/hooks/use-shopping-cart';
 import { Logo } from '@/components/index';
 import CartMan from "@/components/CartMan";
 import Cart from '/components/Cart';
@@ -8,7 +6,6 @@ import { useRouter } from 'next/router';
 import {useState} from "react";
 
 const Header = () => {
-    const { totalPrice, cartCount } = useShoppingCart();
     const router = useRouter();
     const isHomePage = router.pathname === '/';
     const isShop = router.pathname === '/shop';
@@ -38,7 +35,7 @@ const Header = () => {
                             </Link>
                             {isShop && (
                                 <div
-                                    className="flex-shrink-0 mb-2 sm:hidden"
+                                    className="shrink-0 mb-2 sm:hidden"
                                     style={{ width: '40px', height: '40px' }}
                                     onClick={(event) => {
                                         event.stopPropagation();

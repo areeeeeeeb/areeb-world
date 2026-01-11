@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import React from 'react'
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -20,8 +20,6 @@ import { cartState } from "/atoms/cartState"
   const router = useRouter();
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(props);
-  const firstRun = useRef(true);
   const [cartItem, setCartItem] = useRecoilState(cartState);
   const [selectedSize, setSelectedSize] = useState(null);
 
@@ -74,12 +72,12 @@ import { cartState } from "/atoms/cartState"
   ) : (
       <>
         <Head>
-          <title>{props.name} from Areeb World!</title>
+          <title>{`${props.name} from Areeb World!`}</title>
         </Head>
 
 
 
-        <div className="container lg:max-w-screen-lg mx-auto py-5 px-6">
+        <div className="container lg:max-w-(--breakpoint-lg) mx-auto py-5 px-6">
 
           <div
               className="fixed right-16 bottom-16 w-1/4 md:w-1/6"
@@ -132,14 +130,14 @@ import { cartState } from "/atoms/cartState"
                       className="disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-current rounded-md p-1"
                       style={{verticalAlign: 'baseline'}}
                   >
-                    <MinusSmIcon className="w-6 h-6 flex-shrink-0" />
+                    <MinusSmIcon className="w-6 h-6 shrink-0" />
                   </button>
                   <p className="font-semibold text-3xl" style={{verticalAlign: 'baseline' }}>{qty}</p>
                   <button
                       onClick={() => setQty(prev => prev + 1)}
                       className=" rounded-md p-1"
                   >
-                    <PlusSmIcon className="w-6 h-6 flex-shrink-0" />
+                    <PlusSmIcon className="w-6 h-6 shrink-0" />
                   </button>
                 </div>
 
@@ -195,7 +193,7 @@ export async function getStaticProps({ params }) {
       props: mergedProps,
       revalidate: 1,
     };
-  } catch (error) {
+  } catch {
     return { notFound: true };
   }
 }

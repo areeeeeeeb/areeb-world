@@ -1,13 +1,7 @@
-import Head from "next/head";
-import Image from "next/legacy/image";
-import React from 'react'
-import { useState, useEffect } from 'react';
 import KeyboardMan from '../components/KeyboardMan';
-import Cloud2 from '../components/Cloud2';
-import ComputerImage from "/public/keyboard-man/computer.png"
-import Footer from '../components/Footer';
+import MovingCloud from "@/components/MovingCloud";
 import { Logo } from '@/components/index';
-import CustomButton from '../components/CustomButton'
+import Button from '../components/Button'
 import Computer from '../components/Computer'
 
 export default function Home() {
@@ -25,18 +19,17 @@ export default function Home() {
                     className="absolute flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-1/3 z-50
                             bottom-[20%] right-[30px]
                             sm:bottom-[12%] sm:right-[70px]
-                            sm:right-[70px]
                             lg:right-[300px]">
-                    <CustomButton buttonText="SHOP" link="/shop"/>
-                    <CustomButton buttonText="WORK" link="/work"/>
-                    <CustomButton buttonText="DESIGN" link="/design"/>
+                    <Button buttonText="SHOP" link="/shop"/>
+                    <Button buttonText="WORK" link="/work"/>
+                    <Button buttonText="DESIGN" link="/design"/>
                 </div>
 
 
                 <div className="relative translate-y-[300px]">
-                    <Cloud2 size={100} speed={300} />
-                    <Cloud2 size={200} speed={200} />
-                    <Cloud2 size={300} speed={100} />
+                    <MovingCloud size={100} speed={300} />
+                    <MovingCloud size={200} speed={200} />
+                    <MovingCloud size={300} speed={100} />
 
                 </div>
                 <div className="absolute max-w-2xl w-3/4 max-h-[110%]

@@ -1,10 +1,8 @@
-import React from 'react';
-import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from "next/legacy/image";
 import { formatCurrency } from '@/lib/utils';
 
-const ProductCard = ({ id = '', image = '', name = 'Product not foun', shortDescription = '', price = 0, currency = 'CAD' }) => {
+const ProductCard = ({ id = '', image = '', name = 'Product not found', shortDescription = '', price = 0 }) => {
 
     // Return the component
     return (

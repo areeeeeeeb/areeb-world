@@ -27,7 +27,7 @@ const SizeSelector = ({ sizes, onSelectSize}) => {
                     {sizeObj.size}
                     {!sizeObj.available && ( // Add this condition
                         <span
-                            className="absolute w-[3rem] h-11 "
+                            className="absolute w-12 h-11 "
                             style={{
                                 borderTop: '2px solid black', // Customize the diagonal line style
                                 transform: ' translateX(15px) translateY(10px) rotate(-45deg)',

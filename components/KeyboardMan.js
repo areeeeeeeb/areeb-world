@@ -16,7 +16,6 @@ const KeyboardMan = () => {
     const minY = -70; // minimum y position
     const maxY = 50;  // maximum y position
 
-    const divRef = useRef(null);
     const lastTouch = useRef({ x: 0, y: 0 }); // To store the last touch position
 
     useEffect(() => {

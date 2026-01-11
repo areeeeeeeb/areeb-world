@@ -1,8 +1,4 @@
-import React from 'react'
 import Image from 'next/image'
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { CheckIcon } from '@heroicons/react/outline';
 
 const Success = () => {
 
