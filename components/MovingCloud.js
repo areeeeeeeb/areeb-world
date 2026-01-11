@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from "next/legacy/image";
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
-const MovingCloud = ({ size, speed }) => {    
+const MovingCloud = ({ size, speed, zIndex = 2, className }) => {
     const getRandomValue = (min, max) => Math.random() * (max - min) + min;
     // use provided size or generate random width between 250 and 600
     const width = size || getRandomValue(250, 600);
@@ -13,12 +14,17 @@ const MovingCloud = ({ size, speed }) => {
 
     return (
         <div
-            className="absolute w-screen right-0 left-0 -translate-y-64 pointer-events-none overflow-x-hidden"
-            style={{ zIndex: 2 }}
+            className={
+                cn(
+                    "absolute w-screen right-0 left-0 -translate-y-64 pointer-events-none max-w-[100vw]",
+                    className
+                )
+            }
+            style={{ zIndex }}
         >
             <motion.div
-                initial={moveRight ? { x: 0-width } : { x: '110%' }}
-                animate={moveRight ? { x: '110%'} : { x: 0-width }}
+                initial={moveRight ? { x: -width } : { x: '100vw' }}
+                animate={moveRight ? { x: '100vw' } : { x: -width }}
                 transition={{ ease: 'linear', duration: duration, repeat: Infinity }}
             >
                 <Image src="/cloud-2.png" alt="Cloud" width={width} height={width / 2} />
