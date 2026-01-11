@@ -69,7 +69,7 @@ const Cart = ({ isOpen, onClose }) => {
             {isOpen && <div className="fixed inset-0 bg-black opacity-20 z-40"></div>}
             <div
                 ref={cartRef}
-                className={`fixed top-0 right-0 h-screen w-full md:w-3/4 lg:w-1/3 border-black bg-sky transition-transform duration-300 transform z-[50] ${
+                className={`fixed top-0 right-0 h-screen w-full md:w-3/4 lg:w-1/3 border-black bg-sky transition-transform duration-300 transform z-50 ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
@@ -88,7 +88,7 @@ const Cart = ({ isOpen, onClose }) => {
 
 
 
-                    <div className='flex-grow overflow-y-auto'>
+                    <div className='grow overflow-y-auto'>
                         {cartItem.length <= 0 ? (
                             <>
                                 <img

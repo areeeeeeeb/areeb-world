@@ -38,7 +38,7 @@ const Header = () => {
                             </Link>
                             {isShop && (
                                 <div
-                                    className="flex-shrink-0 mb-2 sm:hidden"
+                                    className="shrink-0 mb-2 sm:hidden"
                                     style={{ width: '40px', height: '40px' }}
                                     onClick={(event) => {
                                         event.stopPropagation();

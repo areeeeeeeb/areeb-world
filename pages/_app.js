@@ -1,5 +1,4 @@
 import React from 'react'
-import 'tailwindcss/tailwind.css';
 import '../styles/globals.css';
 import Head from 'next/head';
 import { CartProvider } from '@/hooks/use-shopping-cart';
@@ -38,7 +37,7 @@ function MyApp({ Component, pageProps }) {
 
             <div className="min-h-screen flex flex-col bg-sky">
                 {router.pathname !== '/' && <Header />}
-              <main className="flex-grow">
+              <main className="grow">
                 <Component {...pageProps} />
               </main>
                 {router.pathname !== '/' && <Footer />}

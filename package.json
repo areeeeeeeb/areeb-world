@@ -13,6 +13,7 @@
     "@stripe/stripe-js": "^1.54.2",
     "axios": "^1.7.9",
     "canvas-confetti": "^1.4.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^10.15.0",
     "micro": "^9.3.4",
     "next": "^15.1.4",
@@ -24,14 +25,16 @@
     "recoil": "^0.7.7",
     "stripe": "^8.222.0",
     "swr": "^2.2.0",
+    "tailwind-merge": "^3.4.0",
     "use-shopping-cart": "^3.1.8"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.16",
+    "@tailwindcss/postcss": "^4.1.17",
     "autoprefixer": "^10.2.6",
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.33.1",
     "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
+    "tailwindcss": "^4.1.17"
   }
 }
