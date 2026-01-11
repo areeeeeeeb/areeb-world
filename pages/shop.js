@@ -46,7 +46,7 @@ export default function Shop() {
             <Cart isOpen={isCartOpen} onClose={closeCart} />
 
             <div className="container xl:max-w-(--breakpoint-xl) mx-auto py-0 px-6 md:px-20">
-                {Object.entries(productsByCategory).map(([category, categoryProducts], index) => (
+                {Object.entries(productsByCategory).map(([category, categoryProducts]) => (
                     <div key={category}>
                         <div className="container xl:max-w-(--breakpoint-xl) px-0 text-3xl md:text-5xl" style={{ paddingTop: '30px' }}>
                             <b className="relative uppercase" style={{ fontFamily: 'Areeeb', paddingTop: '10px', lineHeight: '0.7' }}>

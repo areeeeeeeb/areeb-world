@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import React from 'react'
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -20,8 +20,6 @@ import { cartState } from "/atoms/cartState"
   const router = useRouter();
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(props);
-  const firstRun = useRef(true);
   const [cartItem, setCartItem] = useRecoilState(cartState);
   const [selectedSize, setSelectedSize] = useState(null);
 
@@ -195,7 +193,7 @@ export async function getStaticProps({ params }) {
       props: mergedProps,
       revalidate: 1,
     };
-  } catch (error) {
+  } catch {
     return { notFound: true };
   }
 }

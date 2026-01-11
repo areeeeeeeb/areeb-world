@@ -1,11 +1,5 @@
-import Head from "next/head";
-import Image from "next/legacy/image";
-import React from 'react'
-import { useState, useEffect } from 'react';
 import KeyboardMan from '../components/KeyboardMan';
 import MovingCloud from "@/components/MovingCloud";
-import ComputerImage from "/public/keyboard-man/computer.png"
-import Footer from '../components/Footer';
 import { Logo } from '@/components/index';
 import Button from '../components/Button'
 import Computer from '../components/Computer'

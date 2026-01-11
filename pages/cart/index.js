@@ -1,4 +1,3 @@
-import React from 'react'
 import axios from "axios"
 import { useRecoilState } from 'recoil'
 import { cartState } from '/atoms/cartState'
@@ -6,7 +5,7 @@ import CartList from '/components/CartList'
 
 const Cart = () => {
 
-    const [cartItem, setCartItem] = useRecoilState(cartState)
+    const [cartItem] = useRecoilState(cartState)
 
     const totalPrice = () => {
         let total = 0
