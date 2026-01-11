@@ -7,7 +7,7 @@ import MovingCloud from "@/components/MovingCloud";
 import ComputerImage from "/public/keyboard-man/computer.png"
 import Footer from '../components/Footer';
 import { Logo } from '@/components/index';
-import CustomButton from '../components/CustomButton'
+import Button from '../components/Button'
 import Computer from '../components/Computer'
 
 export default function Home() {
@@ -25,11 +25,10 @@ export default function Home() {
                     className="absolute flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-1/3 z-50
                             bottom-[20%] right-[30px]
                             sm:bottom-[12%] sm:right-[70px]
-                            sm:right-[70px]
                             lg:right-[300px]">
-                    <CustomButton buttonText="SHOP" link="/shop"/>
-                    <CustomButton buttonText="WORK" link="/work"/>
-                    <CustomButton buttonText="DESIGN" link="/design"/>
+                    <Button buttonText="SHOP" link="/shop"/>
+                    <Button buttonText="WORK" link="/work"/>
+                    <Button buttonText="DESIGN" link="/design"/>
                 </div>
 
 
