@@ -16,7 +16,7 @@ const MovingCloud = ({ size, speed, zIndex = 2, className }) => {
         <div
             className={
                 cn(
-                    "absolute w-screen right-0 left-0 -translate-y-64 pointer-events-none max-w-[100vw]",
+                    "absolute w-screen right-0 left-0 -translate-y-64 pointer-events-none max-w-[100vw] overflow-x-hidden",
                     className
                 )
             }
