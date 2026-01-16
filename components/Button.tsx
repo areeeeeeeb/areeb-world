@@ -14,9 +14,9 @@ const Button = ({ buttonText, link, className }: ButtonProps) => {
     return (
         <button
             className={cn(
-                "rounded-xl bg-white border-2 sm:border-4 border-black font-bold",
-                "text-4xl sm:text-5xl md:text-6xl lg:text-8xl",
-                "pt-4 sm:pt-6 md:pt-7 lg:pt-10 px-2",
+                "rounded-xl bg-white border-2 lg:border-4 border-black font-bold",
+                "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl",
+                "pt-4 sm:pt-6 md:pt-7 xl:pt-10 2xl:pt-12 px-2",
                 "cursor-pointer",
                 "focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50",
                 className
