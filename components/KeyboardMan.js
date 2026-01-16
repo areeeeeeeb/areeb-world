@@ -11,10 +11,10 @@ const KeyboardMan = () => {
     const [handPosition, setHandPosition] = useState({ x: 40, y: -20 });
 
     // Constraints for the hand movement
-    const minX = -48; // minimum x position
-    const maxX = 65;  // maximum x position
-    const minY = -70; // minimum y position
-    const maxY = 50;  // maximum y position
+    const minX = -10; // minimum x position
+    const maxX = 20;  // maximum x position
+    const minY = -30; // minimum y position
+    const maxY = 30;  // maximum y position
 
     const lastTouch = useRef({ x: 0, y: 0 }); // To store the last touch position
 
@@ -66,18 +66,21 @@ const KeyboardMan = () => {
     }, [handPosition]);
 
     return (
-        <div className="flex flex-col">
-            <img
-                src={handSrc}
-                className="w-1/2 z-10"
-                draggable="false"
-                style={{transform: `translate(${handPosition.x}px, ${handPosition.y}px) translateY(220%)`}}
-            />
+        <div className="relative min-w-0 min-h-0">
             <img
                 src={currentSrc}
-                alt="Switchable Image"
                 draggable="false"
-                className="z-20"
+                className="relative z-30 w-full h-auto  max-w-full max-h-full object-contain"
+            />
+            <img
+                src={handSrc}
+                className="absolute w-1/2 z-10 "
+                draggable="false"
+                style={{
+                    left: '50%',
+                    top: '50%',
+                    transform: `translate(calc(${-100 + handPosition.x}%), calc(${-70 + handPosition.y}%))`
+                }}
             />
         </div>
     );
