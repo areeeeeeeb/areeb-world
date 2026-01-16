@@ -87,11 +87,11 @@ const Computer = () => {
 
 
     return (
-        <div className="relative">
+        <div className="relative w-full max-w-full max-h-full" style={{ aspectRatio: '1352 / 1140' }}>
             <img
                 src="/keyboard-man/computer.png"
                 alt="computer"
-                className="w-full h-auto"
+                className="w-full h-full object-contain"
                 draggable="false"
             />
 
@@ -112,9 +112,11 @@ const Computer = () => {
                     }
                 }}
                 spellCheck="false"
-                className="textarea-terminal absolute top-1/2 resize-none left-1/2 transform translate-x-[-68%] translate-y-[-87%] w-7/12 h-[41%] p-2 focus:outline-none bg-transparent overflow-hidden"
+
+                className="textarea-terminal absolute top-1/2 left-1/2 -translate-x-[68%] -translate-y-[87%] w-7/12 h-[41%] p-2 focus:outline-none bg-transparent overflow-hidden resize-none"
             ></textarea>
         </div>
+      
     );
 };
 
