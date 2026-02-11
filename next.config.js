@@ -11,6 +11,11 @@ module.exports = {
         destination: '/Areeb Rasul Resume.pdf',
         permanent: false
       },
+      {
+        source: '/daily-draw',
+        destination: 'https://areebsdailydraw.netlify.app/',
+        permanent: false
+      },
     ]
   },
 }
