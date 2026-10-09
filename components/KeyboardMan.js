@@ -8,7 +8,7 @@ const KeyboardMan = () => {
 
     const [manSrc, setManSrc] = useState(notTypingSrc);
     const [handSrc, setHandSrc] = useState(defaultHandSrc);
-    const [handPosition, setHandPosition] = useState({ x: 40, y: -20 });
+    const [handPosition, setHandPosition] = useState({ x: 20, y: -10 });
 
     // constraints for the hand movement
     const minX = -10; // minimum x position
