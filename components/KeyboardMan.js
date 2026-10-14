@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 
 const KeyboardMan = () => {
     const notTypingSrc = '/keyboard-man/no-type.png';
@@ -18,16 +19,40 @@ const KeyboardMan = () => {
 
     const lastTouch = useRef({ x: 0, y: 0 }); // To store the last touch position
 
+    // keyboard events
     useEffect(() => {
-        // typing handlers
         const handleKeyDown = () => setManSrc(typingSrc);
         const handleKeyUp = () => setManSrc(notTypingSrc);
 
-        // click handlers
+        window.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('keyup', handleKeyUp);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('keyup', handleKeyUp);
+        };
+    }, []);
+
+    // click/touch events
+    useEffect(() => {
         const handlePointerDown = () => setHandSrc(clickedHandSrc);
         const handlePointerUp = () => setHandSrc(defaultHandSrc);
 
-        // mouse movement handlers
+        window.addEventListener('mousedown', handlePointerDown);
+        window.addEventListener('mouseup', handlePointerUp);
+        window.addEventListener('touchstart', handlePointerDown);
+        window.addEventListener('touchend', handlePointerUp);
+
+        return () => {
+            window.removeEventListener('mousedown', handlePointerDown);
+            window.removeEventListener('mouseup', handlePointerUp);
+            window.removeEventListener('touchstart', handlePointerDown);
+            window.removeEventListener('touchend', handlePointerUp);
+        };
+    }, []);
+
+    // mouse/touch movement
+    useEffect(() => {
         const handleMouseMove = (event) => {
             const moveX = Math.max(minX, Math.min(maxX, handPosition.x - event.movementY * 0.3));
             const moveY = Math.max(minY, Math.min(maxY, handPosition.y + event.movementX * 0.2));
@@ -43,24 +68,10 @@ const KeyboardMan = () => {
             }
         };
 
-        // event listeners
-        window.addEventListener('keydown', handleKeyDown);
-        window.addEventListener('keyup', handleKeyUp);
-        window.addEventListener('mousedown', handlePointerDown);
-        window.addEventListener('mouseup', handlePointerUp);
-        window.addEventListener('touchstart', handlePointerDown);
-        window.addEventListener('touchend', handlePointerUp);
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('touchmove', handleTouchMove, { passive: false });
 
-        // cleanup
         return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-            window.removeEventListener('keyup', handleKeyUp);
-            window.removeEventListener('mousedown', handlePointerDown);
-            window.removeEventListener('mouseup', handlePointerUp);
-            window.removeEventListener('touchstart', handlePointerDown);
-            window.removeEventListener('touchend', handlePointerUp);
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('touchmove', handleTouchMove);
         };
@@ -68,20 +79,26 @@ const KeyboardMan = () => {
 
     return (
         <div className="relative min-w-0 min-h-0">
-            <img
+            <Image
                 src={manSrc}
                 draggable="false"
-                className="relative z-30 w-full h-auto  max-w-full max-h-full object-contain"
+                className="relative z-30 w-full h-auto max-w-full max-h-full object-contain"
+                width={500}
+                height={500}
+                priority
             />
-            <img
+            <Image
                 src={handSrc}
-                className="absolute w-1/2 z-10 "
+                className="absolute w-1/2 z-10"
                 draggable="false"
+                width={250}
+                height={250}
                 style={{
                     left: '50%',
                     top: '50%',
                     transform: `translate(calc(${-100 + handPosition.x}%), calc(${-70 + handPosition.y}%))`
                 }}
+                priority
             />
         </div>
     );
